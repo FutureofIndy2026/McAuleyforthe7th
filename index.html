@@ -12,11 +12,10 @@
       --text:#0f172a;
       --muted:#475569;
       --bg:#ffffff;
-      --card:#f8fafc;
       --border:#e2e8f0;
       --shadow: 0 10px 30px rgba(2,6,23,.08);
       --radius: 18px;
-      --max: 980px;
+      --max: 1100px; /* WIDENED */
     }
 
     *{box-sizing:border-box}
@@ -25,40 +24,51 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:var(--bg);
-      line-height:1.5;
+      line-height:1.55;
     }
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:26px 16px 52px;}
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:32px 20px 60px;
+    }
 
     header{
-      display:flex; align-items:center; justify-content:center;
-      padding:6px 0 18px;
+      text-align:center;
       font-weight:800;
       color:var(--navy);
-      font-size:18px;
+      font-size:20px;
+      margin-bottom:28px;
     }
 
-    .section{margin-top:32px;}
-
     h1{
-      margin:0 0 10px;
+      margin:0 0 14px;
       color:var(--navy);
-      font-size:32px;
+      font-size:34px;
       text-align:center;
     }
 
     p{
-      margin:0 0 14px;
+      margin:0 0 16px;
       color:var(--muted);
+      font-size:17px;
+    }
+
+    .section{
+      margin-top:40px;
+      text-align:center;
     }
 
     .event{
       display:grid;
-      gap:8px;
+      gap:10px;
       background:#fff;
       border:1px solid var(--border);
       border-radius:14px;
-      padding:12px 14px;
+      padding:14px 18px;
+      margin:0 auto 28px auto;
+      max-width:720px;
+      text-align:left;
     }
 
     .row{
@@ -75,13 +85,21 @@
       font-weight:700;
     }
 
+    .headshot{
+      width:240px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      box-shadow:0 10px 30px rgba(2,6,23,.10);
+      margin-top:28px;
+    }
+
     .formwrap{
       background:#fff;
       border:1px solid var(--border);
       border-radius:var(--radius);
       overflow:hidden;
       box-shadow:var(--shadow);
-      margin-top:16px;
+      margin-top:22px;
     }
 
     iframe{
@@ -92,11 +110,11 @@
     }
 
     footer{
-      margin-top:36px;
-      padding-top:18px;
+      margin-top:50px;
+      padding-top:22px;
       border-top:1px solid var(--border);
       color:var(--muted);
-      font-size:12px;
+      font-size:13px;
       text-align:center;
     }
 
@@ -112,20 +130,16 @@
 <body>
   <div class="wrap">
 
-    <header>
-      McAuley for the 7th
-    </header>
-
-    <!-- CENTERED INTRO SECTION -->
-    <section class="section" style="text-align:center; max-width:720px; margin:0 auto;">
+    <!-- INTRO SECTION -->
+    <section class="section">
 
       <h1>The Time Is Now</h1>
 
-      <div class="event" style="margin:0 auto 22px auto; text-align:left; max-width:500px;">
-        <div class="row"><span>📍</span> <div>[CHURCH NAME] — [ADDRESS], [CITY], IN</div></div>
-        <div class="row"><span>📅</span> <div>Wednesday, [MONTH] [DAY], [YEAR]</div></div>
-        <div class="row"><span>⏰</span> <div>[TIME] (Doors open 30 minutes early)</div></div>
-      </div>
+     <div class="event" style="text-align:center; max-width:720px; margin:0 auto 28px auto;">
+  <div style="margin-bottom:8px;">📍 [CHURCH NAME] — [ADDRESS], [CITY], IN</div>
+  <div style="margin-bottom:8px;">📅 Wednesday, [MONTH] [DAY], [YEAR]</div>
+  <div>⏰ [TIME] (Doors open 30 minutes early)</div>
+</div>
 
       <p>
         Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana’s 7th Congressional District.
@@ -139,17 +153,16 @@
         With Republican leadership in the Statehouse and the White House, Patrick believes the 7th District needs Republican representation to deliver lasting resources and results.
       </p>
 
-      <div style="margin-top:24px;">
-        <img src="headshot.jpg"
-             alt="Patrick McAuley headshot"
-             style="width:220px; border-radius:16px; border:1px solid #e2e8f0; box-shadow:0 10px 30px rgba(2,6,23,.10);" />
-      </div>
+      <img src="headshot.jpg"
+           alt="Patrick McAuley headshot"
+           class="headshot" />
 
     </section>
 
     <!-- RSVP SECTION -->
-    <section class="section" style="max-width:720px; margin:40px auto 0 auto; text-align:center;">
-      <h1 style="font-size:26px;">RSVP</h1>
+    <section class="section">
+
+      <h1 style="font-size:28px;">RSVP</h1>
 
       <div class="formwrap">
         <iframe
@@ -160,6 +173,7 @@
           Loading…
         </iframe>
       </div>
+
     </section>
 
     <footer>
