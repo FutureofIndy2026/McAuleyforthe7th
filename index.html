@@ -15,7 +15,7 @@
       --border:#e2e8f0;
       --shadow: 0 10px 30px rgba(2,6,23,.08);
       --radius: 18px;
-      --max: 1100px; /* WIDENED */
+      --max: 1100px;
     }
 
     *{box-sizing:border-box}
@@ -59,6 +59,7 @@
       text-align:center;
     }
 
+    /* Centered event details block */
     .event{
       display:grid;
       gap:10px;
@@ -68,21 +69,9 @@
       padding:14px 18px;
       margin:0 auto 28px auto;
       max-width:720px;
-      text-align:left;
-    }
-
-    .row{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      color:var(--text);
+      text-align:center;
       font-weight:600;
-    }
-
-    .row span{
-      min-width:18px;
-      color:var(--muted);
-      font-weight:700;
+      color:var(--text);
     }
 
     .headshot{
@@ -91,18 +80,22 @@
       border:1px solid var(--border);
       box-shadow:0 10px 30px rgba(2,6,23,.10);
       margin-top:28px;
+      background:#fff;
+      display:inline-block;
     }
 
-    .formwrap{
+    /* Form "native card" styling */
+    .formcard{
       background:#fff;
       border:1px solid var(--border);
-      border-radius:var(--radius);
-      overflow:hidden;
+      border-radius:18px;
       box-shadow:var(--shadow);
-      margin-top:22px;
+      overflow:hidden;
+      max-width: 980px;
+      margin: 0 auto;
     }
 
-    iframe{
+    .formframe{
       width:100%;
       height:1600px;
       border:0;
@@ -123,23 +116,27 @@
       color:var(--navy);
       margin-bottom:6px;
     }
-
   </style>
 </head>
 
 <body>
   <div class="wrap">
 
+    <header>
+      McAuley for the 7th
+    </header>
+
     <!-- INTRO SECTION -->
     <section class="section">
 
       <h1>The Time Is Now</h1>
 
-     <div class="event" style="text-align:center; max-width:720px; margin:0 auto 28px auto;">
-  <div style="margin-bottom:8px;">📍 [CHURCH NAME] — [ADDRESS], [CITY], IN</div>
-  <div style="margin-bottom:8px;">📅 Wednesday, [MONTH] [DAY], [YEAR]</div>
-  <div>⏰ [TIME] (Doors open 30 minutes early)</div>
-</div>
+      <!-- CENTERED EVENT DETAILS -->
+      <div class="event">
+        <div>📍 [CHURCH NAME] — [ADDRESS], [CITY], IN</div>
+        <div>📅 Wednesday, [MONTH] [DAY], [YEAR]</div>
+        <div>⏰ [TIME] (Doors open 30 minutes early)</div>
+      </div>
 
       <p>
         Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana’s 7th Congressional District.
@@ -153,17 +150,20 @@
         With Republican leadership in the Statehouse and the White House, Patrick believes the 7th District needs Republican representation to deliver lasting resources and results.
       </p>
 
-      <img src="headshot.jpg"
-           alt="Patrick McAuley headshot"
-           class="headshot" />
+      <!-- HEADSHOT -->
+      <img src="headshot.jpg" alt="Patrick McAuley headshot" class="headshot" />
 
     </section>
 
     <!-- RSVP SECTION -->
     <section class="section">
 
-      <div class="formwrap">
+      <h1 style="font-size:28px;">RSVP</h1>
+
+      <!-- NATIVE-LOOKING EMBED CARD -->
+      <div class="formcard">
         <iframe
+          class="formframe"
           src="https://docs.google.com/forms/d/e/1FAIpQLSertHWvi74LR5gxs2_hkr5VK7IBQBHMOdeSSldCNSo2eqPMZQ/viewform?embedded=true"
           loading="lazy"
           title="District 7 Town Hall RSVP Form"
@@ -176,8 +176,10 @@
 
     <footer>
       <div class="paidfor">Paid for by McAuley for Congress.</div>
+      <div>Your information will be used for event communications and campaign updates.</div>
     </footer>
 
   </div>
 </body>
 </html>
+```
