@@ -1,17 +1,3 @@
-<!--
-McAuley for the 7th — Town Hall RSVP Landing Page
-Deploy via GitHub Pages (instructions below).
-
-HOW TO USE:
-1) Replace the FORM_EMBED_URL in the iframe src with your Google Form embed URL.
-   - Google Form → Send → <> Embed → copy the "src" link (it includes embedded=true)
-2) Replace placeholders: [DATE], [TIME], [CHURCH NAME], [ADDRESS], [CITY]
-3) Optional: Replace the hero image URL with a real (non-AI) headshot.
-
-COMPLIANCE NOTE:
-Keep the “Paid for by McAuley for Congress” footer.
--->
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -140,64 +126,8 @@ Keep the “Paid for by McAuley for Congress” footer.
       margin:10px 0 0;
     }
 
-    .photo{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      overflow:hidden;
-      min-height: 320px;
-      display:grid;
-      grid-template-rows: 1fr auto;
-    }
-    .photo .img{
-      background:
-        linear-gradient(135deg, rgba(11,31,58,.08), rgba(185,28,28,.06)),
-        url("https://images.unsplash.com/photo-1520975958225-5f59e42f53c2?auto=format&fit=crop&w=1200&q=80");
-      background-size:cover;
-      background-position:center;
-      min-height: 300px;
-    }
-    .photo .cap{
-      padding:14px 16px;
-      color:var(--muted);
-      font-size:13px;
-      border-top:1px solid var(--border);
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-      margin-top:18px;
-    }
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr;} }
-
-    .pill{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:16px;
-    }
-    .pill h3{
-      margin:0 0 6px;
-      font-size:16px;
-      color:var(--navy);
-    }
-    .pill p{margin:0; color:var(--muted); font-size:14px;}
-
     .section{
       margin-top:24px;
-    }
-    .section h2{
-      margin:0 0 10px;
-      font-size:22px;
-      color:var(--navy);
-      letter-spacing:-.2px;
-    }
-    .section p{
-      margin:0 0 14px;
-      color:var(--muted);
-      max-width:70ch;
     }
 
     .formwrap{
@@ -207,14 +137,12 @@ Keep the “Paid for by McAuley for Congress” footer.
       overflow:hidden;
       box-shadow: var(--shadow);
     }
+
     iframe{
       width:100%;
-      height: 1100px;
+      height:1600px;
       border:0;
       display:block;
-    }
-    @media (max-width: 520px){
-      iframe{height: 1200px;}
     }
 
     footer{
@@ -231,12 +159,12 @@ Keep the “Paid for by McAuley for Congress” footer.
       font-weight:800;
       color:var(--navy);
     }
-    .smallcaps{letter-spacing:.12em; text-transform:uppercase;}
   </style>
 </head>
 
 <body>
   <div class="wrap">
+
     <header>
       <div class="brand">
         <span>McAuley for the 7th</span>
@@ -246,58 +174,6 @@ Keep the “Paid for by McAuley for Congress” footer.
     </header>
 
     <main>
-      <section class="hero">
-        <div class="card">
-          <h1>The Future of District 7 Starts Now</h1>
-          <p class="sub">
-            Join Patrick McAuley for a district-wide town hall focused on public safety, housing stability, and economic opportunity.
-          </p>
-
-          <div class="event" aria-label="Event details">
-            <div class="row"><span>📍</span> <div>[CHURCH NAME] — [ADDRESS], [CITY], IN</div></div>
-            <div class="row"><span>📅</span> <div>Wednesday, [MONTH] [DAY], [YEAR]</div></div>
-            <div class="row"><span>⏰</span> <div>[TIME] (Doors open 30 minutes early)</div></div>
-          </div>
-
-          <div class="cta">
-            <a class="btn" href="#rsvp">Reserve Your Seat</a>
-            <a class="btn secondary" href="#about">About the Campaign</a>
-          </div>
-
-          <p class="note">Seating is first come, first served. Please RSVP below.</p>
-        </div>
-
-        <aside class="photo" aria-label="Photo panel">
-          <div class="img" role="img" aria-label="Candidate photo placeholder"></div>
-          <div class="cap">
-            Replace this image with a real headshot (recommended) or a clean speaking photo.
-          </div>
-        </aside>
-      </section>
-
-      <section id="about" class="section">
-        <h2>About McAuley for the 7th</h2>
-        <p>
-          Patrick McAuley is a Republican candidate for U.S. House in Indiana’s 7th District focused on steady, practical leadership.
-          His campaign is centered on safer neighborhoods, attainable housing, and stronger economic opportunity—bringing people together
-          around solutions that deliver results for working families.
-        </p>
-
-        <div class="grid" role="list" aria-label="Priority areas">
-          <div class="pill" role="listitem">
-            <h3>Public Safety</h3>
-            <p>Support effective policing while strengthening trust and accountability.</p>
-          </div>
-          <div class="pill" role="listitem">
-            <h3>Housing Stability</h3>
-            <p>Expand attainable housing and workforce pathways that help families build long-term security.</p>
-          </div>
-          <div class="pill" role="listitem">
-            <h3>Economic Opportunity</h3>
-            <p>Help small businesses grow and make it easier for working families to get ahead.</p>
-          </div>
-        </div>
-      </section>
 
       <section id="rsvp" class="section">
         <h2>RSVP</h2>
@@ -306,13 +182,11 @@ Keep the “Paid for by McAuley for Congress” footer.
         </p>
 
         <div class="formwrap">
-          <!-- Replace the src value with your Google Form embed URL -->
           <iframe
-            src="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSertHWvi74LR5gxs2_hkr5VK7IBQBHMOdeSSldCNSo2eqPMZQ/viewform?embedded=true" width="640" height="1517" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSertHWvi74LR5gxs2_hkr5VK7IBQBHMOdeSSldCNSo2eqPMZQ/viewform?embedded=true"
             loading="lazy"
             title="District 7 Town Hall RSVP Form"
-            referrerpolicy="no-referrer-when-downgrade"
-          >
+            referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
 
@@ -327,6 +201,7 @@ Keep the “Paid for by McAuley for Congress” footer.
           This page is for event information and RSVP collection. Your information will be used for event communications and campaign updates.
         </div>
       </footer>
+
     </main>
   </div>
 </body>
