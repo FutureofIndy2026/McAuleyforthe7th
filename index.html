@@ -126,8 +126,64 @@
       margin:10px 0 0;
     }
 
+    .photo{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      min-height: 320px;
+      display:grid;
+      grid-template-rows: 1fr auto;
+    }
+    .photo .img{
+      background:
+        linear-gradient(135deg, rgba(11,31,58,.08), rgba(185,28,28,.06)),
+        url("https://images.unsplash.com/photo-1520975958225-5f59e42f53c2?auto=format&fit=crop&w=1200&q=80");
+      background-size:cover;
+      background-position:center;
+      min-height: 300px;
+    }
+    .photo .cap{
+      padding:14px 16px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--border);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr;} }
+
+    .pill{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+    }
+    .pill h3{
+      margin:0 0 6px;
+      font-size:16px;
+      color:var(--navy);
+    }
+    .pill p{margin:0; color:var(--muted); font-size:14px;}
+
     .section{
       margin-top:24px;
+    }
+    .section h2{
+      margin:0 0 10px;
+      font-size:22px;
+      color:var(--navy);
+      letter-spacing:-.2px;
+    }
+    .section p{
+      margin:0 0 14px;
+      color:var(--muted);
+      max-width:70ch;
     }
 
     .formwrap{
@@ -159,12 +215,44 @@
       font-weight:800;
       color:var(--navy);
     }
+    .smallcaps{letter-spacing:.12em; text-transform:uppercase;}
+
+    /* Intro section layout */
+    .intro{
+      display:grid;
+      grid-template-columns: 1fr 260px;
+      gap:28px;
+      align-items:center;
+      margin-top:26px;
+    }
+    @media (max-width: 900px){
+      .intro{grid-template-columns: 1fr; }
+    }
+    .intro h2{
+      color:var(--navy);
+      font-size:28px;
+      margin:0 0 10px;
+      letter-spacing:-.2px;
+    }
+    .intro p{
+      color:var(--muted);
+      font-size:15px;
+      margin:0 0 12px;
+      max-width:65ch;
+    }
+    .headshot{
+      width:100%;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(2,6,23,.12);
+      border:1px solid var(--border);
+      background:#fff;
+      display:block;
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-
     <header>
       <div class="brand">
         <span>McAuley for the 7th</span>
@@ -174,6 +262,84 @@
     </header>
 
     <main>
+      <section class="hero">
+        <div class="card">
+          <h1>The Future of District 7 Starts Now</h1>
+          <p class="sub">
+            Join Patrick McAuley for a district-wide town hall focused on public safety, housing stability, and economic opportunity.
+          </p>
+
+          <div class="event" aria-label="Event details">
+            <div class="row"><span>📍</span> <div>[CHURCH NAME] — [ADDRESS], [CITY], IN</div></div>
+            <div class="row"><span>📅</span> <div>Wednesday, [MONTH] [DAY], [YEAR]</div></div>
+            <div class="row"><span>⏰</span> <div>[TIME] (Doors open 30 minutes early)</div></div>
+          </div>
+
+          <div class="cta">
+            <a class="btn" href="#rsvp">Reserve Your Seat</a>
+            <a class="btn secondary" href="#about">About the Campaign</a>
+          </div>
+
+          <p class="note">Seating is first come, first served. Please RSVP below.</p>
+        </div>
+
+        <aside class="photo" aria-label="Photo panel">
+          <div class="img" role="img" aria-label="Candidate photo placeholder"></div>
+          <div class="cap">
+            Replace this image with a real headshot (recommended) or a clean speaking photo.
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="section">
+        <h2>About McAuley for the 7th</h2>
+        <p>
+          Patrick McAuley is a Republican candidate for U.S. House in Indiana’s 7th District focused on steady, practical leadership.
+          His campaign is centered on safer neighborhoods, attainable housing, and stronger economic opportunity—bringing people together
+          around solutions that deliver results for working families.
+        </p>
+
+        <div class="grid" role="list" aria-label="Priority areas">
+          <div class="pill" role="listitem">
+            <h3>Public Safety</h3>
+            <p>Support effective policing while strengthening trust and accountability.</p>
+          </div>
+          <div class="pill" role="listitem">
+            <h3>Housing Stability</h3>
+            <p>Expand attainable housing and workforce pathways that help families build long-term security.</p>
+          </div>
+          <div class="pill" role="listitem">
+            <h3>Economic Opportunity</h3>
+            <p>Help small businesses grow and make it easier for working families to get ahead.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW INTRO SECTION ABOVE RSVP -->
+      <section class="section">
+        <div class="intro">
+          <div>
+            <h2>The Time Is Now</h2>
+
+            <p>I’m Patrick McAuley — a grassroots leader born and raised in Broad Ripple, Indianapolis.</p>
+
+            <p>
+              For the past year, our team has been building a coalition across the 7th District to engage voters on the issues that matter most:
+              affordability, housing stability, public safety, and job growth.
+            </p>
+
+            <p>
+              I’m a former Division III All-American athlete and have experience interning on Capitol Hill for two U.S. Senators.
+              This campaign is about steady leadership and being a clear voice for the 7th District.
+            </p>
+          </div>
+
+          <!-- Replace headshot.jpg with your actual image filename or URL -->
+          <div>
+            <img class="headshot" src="headshot.jpg" alt="Patrick McAuley headshot" />
+          </div>
+        </div>
+      </section>
 
       <section id="rsvp" class="section">
         <h2>RSVP</h2>
@@ -201,7 +367,6 @@
           This page is for event information and RSVP collection. Your information will be used for event communications and campaign updates.
         </div>
       </footer>
-
     </main>
   </div>
 </body>
