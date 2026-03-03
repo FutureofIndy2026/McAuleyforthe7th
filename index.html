@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>District 7 Town Hall RSVP | McAuley for the 7th</title>
-  <meta name="description" content="RSVP for Patrick McAuley’s District 7 Community Town Hall." />
+  <meta name="description" content="RSVP for Patrick McAuley’s District 7 Town Hall." />
+
+  <!-- Mailchimp embed CSS -->
+  <link href="https://cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 
   <style>
     :root{
@@ -60,6 +63,10 @@
       box-shadow:var(--shadow);
     }
 
+    .section{
+      margin-top:40px;
+    }
+
     .formcard{
       background:#fff;
       border:1px solid var(--border);
@@ -67,14 +74,9 @@
       box-shadow:var(--shadow);
       overflow:hidden;
       max-width: 980px;
-      margin:40px auto 0 auto;
-    }
-
-    .formframe{
-      width:100%;
-      height:1600px;
-      border:0;
-      display:block;
+      margin:18px auto 0 auto;
+      text-align:left;
+      padding: 18px 18px 8px;
     }
 
     footer{
@@ -83,6 +85,7 @@
       border-top:1px solid var(--border);
       color:var(--muted);
       font-size:13px;
+      text-align:center;
     }
 
     .paidfor{
@@ -91,14 +94,87 @@
       margin-bottom:6px;
     }
 
+    /* Mailchimp style overrides (make it feel native) */
+    #mc_embed_signup{
+      background: transparent !important;
+      width: 100% !important;
+      font: inherit !important;
+    }
+
+    #mc_embed_signup h2{
+      color: var(--navy) !important;
+      font-weight: 800 !important;
+      font-size: 22px !important;
+      margin: 6px 0 14px !important;
+    }
+
+    #mc_embed_signup .indicates-required{
+      color: var(--muted) !important;
+      margin-bottom: 10px !important;
+    }
+
+    #mc_embed_signup .mc-field-group label{
+      color: var(--text) !important;
+      font-weight: 700 !important;
+    }
+
+    #mc_embed_signup input,
+    #mc_embed_signup select{
+      border-radius: 12px !important;
+      border: 1px solid var(--border) !important;
+      padding: 12px 12px !important;
+      font-size: 16px !important;
+    }
+
+    #mc_embed_signup .button{
+      background: var(--navy) !important;
+      border-radius: 999px !important;
+      font-weight: 800 !important;
+      height: auto !important;
+      padding: 12px 16px !important;
+    }
+
+    /* In-page confirmation */
+    .thankyou{
+      display:none;
+      text-align:center;
+      padding:26px 18px;
+    }
+    .thankyou h2{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:26px;
+    }
+    .thankyou p{
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .inline-error{
+      display:none;
+      margin:12px 0 0;
+      padding:10px 12px;
+      border:1px solid #fecaca;
+      background:#fff1f2;
+      color:#991b1b;
+      border-radius:12px;
+      font-weight:600;
+    }
+
+    @media (max-width: 600px){
+      .wrap{padding:28px 14px 50px;}
+      .formcard{padding: 14px 12px 6px;}
+      p{font-size:17px;}
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
 
-    <!-- INTRO SECTION -->
-    <h1>Town Hall</h1>
+    <!-- INTRO -->
+    <h1>The Time Is Now</h1>
 
     <div class="event">
       <div>Jerusalem Apostolic Church</div>
@@ -108,7 +184,7 @@
     </div>
 
     <p>
-     Patrick McAuley is a Republican candidate for Indiana’s 7th Congressional District.
+      Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana’s 7th District.
     </p>
 
     <p>
@@ -119,21 +195,162 @@
       The time is now.
     </p>
 
-    <div class="formcard">
-      <iframe
-        class="formframe"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSertHWvi74LR5gxs2_hkr5VK7IBQBHMOdeSSldCNSo2eqPMZQ/viewform?embedded=true"
-        loading="lazy"
-        title="District 7 Town Hall RSVP Form"
-        referrerpolicy="no-referrer-when-downgrade">
-        Loading…
-      </iframe>
+    <!-- RSVP -->
+    <div class="section">
+      <h1 style="font-size:28px; margin-bottom:10px;">RSVP</h1>
+
+      <div class="formcard" id="rsvpCard">
+
+        <!-- THANK YOU (hidden until submit success) -->
+        <div class="thankyou" id="thankYou">
+          <h2>Thanks — you’re RSVP’d.</h2>
+          <p>We’ll send you a reminder before the town hall.</p>
+        </div>
+
+        <!-- FORM -->
+        <div id="mc_embed_signup">
+          <form
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate"
+            novalidate
+          >
+            <div id="mc_embed_signup_scroll">
+              <h2>Reserve Your Seat</h2>
+
+              <div class="indicates-required">
+                <span class="asterisk">*</span> indicates required
+              </div>
+
+              <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
+              </div>
+
+              <div class="mc-field-group">
+                <label for="mce-MMERGE1">Do you plan to attend the town hall meeting?</label>
+                <select name="MMERGE1" id="mce-MMERGE1">
+                  <option value=""></option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div class="mc-field-group">
+                <label for="mce-MMERGE2">First Name</label>
+                <input type="text" name="MMERGE2" id="mce-MMERGE2" value="">
+              </div>
+
+              <div class="mc-field-group">
+                <label for="mce-MMERGE3">Last Name</label>
+                <input type="text" name="MMERGE3" id="mce-MMERGE3" value="">
+              </div>
+
+              <div class="mc-field-group">
+                <label for="mce-MMERGE4">Mobile Phone</label>
+                <input type="text" name="MMERGE4" id="mce-MMERGE4" value="">
+              </div>
+
+              <div class="mc-field-group">
+                <label for="mce-MMERGE5">Zip Code</label>
+                <input type="text" name="MMERGE5" id="mce-MMERGE5" value="">
+              </div>
+
+              <div class="mc-field-group">
+                <label for="mce-MMERGE6">Which issues matter most to you right now?</label>
+                <select name="MMERGE6" id="mce-MMERGE6">
+                  <option value=""></option>
+                  <option value="Public Safety">Public Safety</option>
+                  <option value="Housing and Stability">Housing and Stability</option>
+                  <option value="Jobs and Small Business Growth">Jobs and Small Business Growth</option>
+                  <option value="Affordability">Affordability</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <!-- Bot trap (keep) -->
+              <div aria-hidden="true" style="position:absolute; left:-5000px;">
+                <input type="text" name="b_7e739e6c5df440ff5e37d2a6b_a883200159" tabindex="-1" value="">
+              </div>
+
+              <div class="clear foot" style="margin-top:10px;">
+                <input type="submit" id="mc-embedded-subscribe" class="button" value="Submit RSVP">
+              </div>
+
+              <div class="inline-error" id="inlineError"></div>
+            </div>
+          </form>
+        </div>
+
+      </div>
     </div>
 
     <footer>
       <div class="paidfor">Paid for by McAuley for Congress.</div>
+      <div>Your information will be used for event communications and campaign updates.</div>
     </footer>
 
   </div>
+
+  <script>
+    // Mailchimp JSONP submit (works on static sites like GitHub Pages)
+    const FORM_ACTION_POST = "https://futureofindy.us19.list-manage.com/subscribe/post?u=7e739e6c5df440ff5e37d2a6b&id=a883200159&f_id=00f2c2e1f0";
+
+    const form = document.getElementById("mc-embedded-subscribe-form");
+    const thankYou = document.getElementById("thankYou");
+    const inlineError = document.getElementById("inlineError");
+    const submitBtn = document.getElementById("mc-embedded-subscribe");
+
+    function serializeForm(formEl){
+      const data = new FormData(formEl);
+      const params = new URLSearchParams();
+      for (const [k,v] of data.entries()){
+        params.append(k, v);
+      }
+      return params.toString();
+    }
+
+    window.mc_callback = function(resp){
+      submitBtn.disabled = false;
+      submitBtn.value = "Submit RSVP";
+
+      if (resp && resp.result === "success") {
+        inlineError.style.display = "none";
+        document.getElementById("mc_embed_signup").style.display = "none";
+        thankYou.style.display = "block";
+        return;
+      }
+
+      // Error
+      const msg = (resp && resp.msg) ? resp.msg.replace(/<[^>]*>?/gm, "") : "Something went wrong. Please try again.";
+      inlineError.textContent = msg;
+      inlineError.style.display = "block";
+    };
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      inlineError.style.display = "none";
+      submitBtn.disabled = true;
+      submitBtn.value = "Submitting...";
+
+      // Convert action to Mailchimp JSONP endpoint
+      const jsonpUrl = FORM_ACTION_POST
+        .replace("/post?", "/post-json?")
+        + "&c=mc_callback&" + serializeForm(form);
+
+      // JSONP: inject a script tag
+      const script = document.createElement("script");
+      script.src = jsonpUrl;
+      script.async = true;
+
+      // Clean up old JSONP script tags
+      const old = document.getElementById("mc-jsonp");
+      if (old) old.remove();
+      script.id = "mc-jsonp";
+
+      document.body.appendChild(script);
+    });
+  </script>
 </body>
 </html>
