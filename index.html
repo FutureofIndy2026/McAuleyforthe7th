@@ -1,330 +1,241 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>District 7 Town Hall RSVP | McAuley for the 7th</title>
-  <meta name="description" content="RSVP for Patrick McAuley’s District 7 Town Hall." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>District 7 Town Hall RSVP | McAuley for the 7th</title>
 
-  <!-- Mailchimp embed CSS -->
-  <link href="https://cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+<link href="https://cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet">
 
-  <style>
-    :root{
-      --navy:#0b1f3a;
-      --text:#0f172a;
-      --muted:#475569;
-      --bg:#ffffff;
-      --border:#e2e8f0;
-      --shadow: 0 10px 30px rgba(2,6,23,.08);
-      --radius: 18px;
-      --max: 1100px;
-    }
+<style>
+:root{
+  --navy:#0b1f3a;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:#e2e8f0;
+  --shadow:0 10px 30px rgba(2,6,23,.08);
+  --radius:18px;
+  --max:1100px;
+}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.55;
-    }
+*{box-sizing:border-box}
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:40px 20px 60px;
-      text-align:center;
-    }
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  color:var(--text);
+  background:#ffffff;
+  line-height:1.6;
+}
 
-    h1{
-      margin:0 0 20px;
-      color:var(--navy);
-      font-size:34px;
-    }
+/* Subtle American flag background */
+.flag-bg{
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+    url('https://images.unsplash.com/photo-1520975958225-5f59e42f53c2?auto=format&fit=crop&w=1600&q=80');
+  background-size:cover;
+  background-position:center;
+  z-index:-1;
+}
 
-    p{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:18px;
-    }
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:60px 20px 80px;
+  text-align:center;
+}
 
-    .event{
-      display:grid;
-      gap:8px;
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:16px 20px;
-      margin:0 auto 32px auto;
-      max-width:720px;
-      font-weight:600;
-      color:var(--text);
-      box-shadow:var(--shadow);
-    }
+h1{
+  color:var(--navy);
+  font-size:42px;
+  margin-bottom:25px;
+  font-weight:800;
+}
 
-    .section{
-      margin-top:40px;
-    }
+.event{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px 22px;
+  margin:0 auto 35px;
+  max-width:750px;
+  box-shadow:var(--shadow);
+  font-weight:600;
+}
 
-    .formcard{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      max-width: 980px;
-      margin:18px auto 0 auto;
-      text-align:left;
-      padding: 18px 18px 8px;
-    }
+.event div{margin:4px 0;}
 
-    footer{
-      margin-top:50px;
-      padding-top:22px;
-      border-top:1px solid var(--border);
-      color:var(--muted);
-      font-size:13px;
-      text-align:center;
-    }
+p{
+  max-width:850px;
+  margin:0 auto 18px;
+  color:var(--muted);
+  font-size:19px;
+}
 
-    .paidfor{
-      font-weight:800;
-      color:var(--navy);
-      margin-bottom:6px;
-    }
+.headshot{
+  margin:35px auto 10px;
+}
 
-    /* Mailchimp style overrides (make it feel native) */
-    #mc_embed_signup{
-      background: transparent !important;
-      width: 100% !important;
-      font: inherit !important;
-    }
+.headshot img{
+  width:260px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  border:4px solid #fff;
+}
 
-    #mc_embed_signup h2{
-      color: var(--navy) !important;
-      font-weight: 800 !important;
-      font-size: 22px !important;
-      margin: 6px 0 14px !important;
-    }
+/* Form Card */
+.formcard{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  max-width:950px;
+  margin:40px auto 0;
+  padding:30px;
+  text-align:left;
+}
 
-    #mc_embed_signup .indicates-required{
-      color: var(--muted) !important;
-      margin-bottom: 10px !important;
-    }
+#mc_embed_signup{
+  background:transparent !important;
+  width:100% !important;
+  font:inherit !important;
+}
 
-    #mc_embed_signup .mc-field-group label{
-      color: var(--text) !important;
-      font-weight: 700 !important;
-    }
+#mc_embed_signup .mc-field-group label{
+  font-weight:700 !important;
+  color:var(--text) !important;
+}
 
-    #mc_embed_signup input,
-    #mc_embed_signup select{
-      border-radius: 12px !important;
-      border: 1px solid var(--border) !important;
-      padding: 12px 12px !important;
-      font-size: 16px !important;
-    }
+#mc_embed_signup input,
+#mc_embed_signup select{
+  border-radius:12px !important;
+  border:1px solid var(--border) !important;
+  padding:12px !important;
+  font-size:16px !important;
+}
 
-    #mc_embed_signup .button{
-      background: var(--navy) !important;
-      border-radius: 999px !important;
-      font-weight: 800 !important;
-      height: auto !important;
-      padding: 12px 16px !important;
-    }
+#mc_embed_signup .button{
+  background:var(--navy) !important;
+  border-radius:999px !important;
+  font-weight:800 !important;
+  padding:12px 18px !important;
+}
 
-    /* In-page confirmation */
-    .thankyou{
-      display:none;
-      text-align:center;
-      padding:26px 18px;
-    }
-    .thankyou h2{
-      margin:0 0 10px;
-      color:var(--navy);
-      font-size:26px;
-    }
-    .thankyou p{
-      margin:0;
-      color:var(--muted);
-      font-size:18px;
-    }
+.thankyou{
+  display:none;
+  text-align:center;
+  padding:20px 10px;
+}
 
-    .inline-error{
-      display:none;
-      margin:12px 0 0;
-      padding:10px 12px;
-      border:1px solid #fecaca;
-      background:#fff1f2;
-      color:#991b1b;
-      border-radius:12px;
-      font-weight:600;
-    }
+.thankyou h2{
+  color:var(--navy);
+  font-size:28px;
+  margin-bottom:10px;
+}
 
-    @media (max-width: 600px){
-      .wrap{padding:28px 14px 50px;}
-      .formcard{padding: 14px 12px 6px;}
-      p{font-size:17px;}
-    }
-  </style>
+footer{
+  margin-top:60px;
+  padding-top:25px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
+}
+
+.paidfor{
+  font-weight:800;
+  color:var(--navy);
+}
+
+@media(max-width:600px){
+  h1{font-size:34px;}
+  p{font-size:17px;}
+  .formcard{padding:20px;}
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
 
-    <!-- INTRO -->
-    <h1>Town Hall</h1>
+<div class="flag-bg"></div>
 
-    <div class="event">
-      <div>Jerusalem Apostolic Church</div>
-      <div>2125 E 54th St, Indianapolis, IN 46220</div>
-      <div>Wednesday, March 18th</div>
-      <div>6:30 PM (Doors open 30 minutes early)</div>
-    </div>
+<div class="wrap">
 
-    <p>
-      Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana’s 7th District.
-    </p>
+<h1>7th District Indiana</h1>
+<h1>Community Town Hall</h1>
 
-    <p>
-      With Republican leadership in the Statehouse and the White House, Patrick believes the 7th District needs Republican representation to deliver the necessary resources into the district.
-    </p>
-
-    <p>
-      The time is now.
-    </p>
-
-      <div class="formcard" id="rsvpCard">
-
-        <!-- THANK YOU (hidden until submit success) -->
-        <div class="thankyou" id="thankYou">
-          <h2>Thanks — you’re RSVP’d.</h2>
-          <p>We’ll send you a reminder before the town hall.</p>
-        </div>
-
-        <!-- FORM -->
-       
-           <div id="mc_embed_signup">
-  <form
-    id="mc-embedded-subscribe-form"
-    name="mc-embedded-subscribe-form"
-    class="validate"
-    novalidate
-  >
-    <div id="mc_embed_signup_scroll">
-
-      <div class="indicates-required">
-        <span class="asterisk">*</span> indicates required
-      </div>
-
-      <div class="mc-field-group">
-        <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
-      </div>
-
-      <div class="mc-field-group">
-        <label for="mce-MMERGE1">Do you plan to attend the town hall meeting? <span class="asterisk">*</span></label>
-        <select name="MMERGE1" class="required" id="mce-MMERGE1" required>
-          <option value=""></option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-
-      <div class="mc-field-group">
-        <label for="mce-MMERGE4">Mobile Phone <span class="asterisk">*</span></label>
-        <input type="text" name="MMERGE4" class="required text" id="mce-MMERGE4" value="" required>
-        <span id="mce-MMERGE4-HELPERTEXT" class="helper_text">*for reminders</span>
-      </div>
-
-      <!-- Bot trap (keep) -->
-      <div aria-hidden="true" style="position:absolute; left:-5000px;">
-        <input type="text" name="b_7e739e6c5df440ff5e37d2a6b_a883200159" tabindex="-1" value="">
-      </div>
-
-      <div class="clear foot" style="margin-top:10px;">
-        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Submit RSVP">
-      </div>
-
-      <div class="inline-error" id="inlineError"></div>
-    </div>
-  </form>
+<div class="event">
+  <div>Jerusalem Apostolic Church</div>
+  <div>2125 E 54th St, Indianapolis, IN 46220</div>
+  <div>Wednesday, March 18th</div>
+  <div>6:30 PM (Doors open 30 minutes early)</div>
 </div>
 
-              <div class="inline-error" id="inlineError"></div>
-            </div>
-          </form>
-        </div>
+<p>
+Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana’s 7th District.
+</p>
+  
+<p>
+Last year, his team put out a survey that recieved over 350 responses from voters on topics ranging from parks and recreation, infrastructure, public safety, housing, career pathways, and the future of families and loved ones. We listened and now we are ready to answer.
+<p/>
+  
+<p>
+We are very excited to have you as part of the conversation at our town hall meetings. The first one will be held on the date mentioned above.
+<p/>
 
-      </div>
-    </div>
+<p>
+Please come with questions, comments, and bring friends and family. 
+<p/>
 
-    <footer>
-      <div class="paidfor">Paid for by McAuley for Congress</div>
-    </footer>
+<p><strong>Let's build this together.</strong></p>
 
-  </div>
+<!-- HEADSHOT -->
+<div class="headshot">
+  <img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
+</div>
 
-  <script>
-    // Mailchimp JSONP submit (works on static sites like GitHub Pages)
-    const FORM_ACTION_POST = "https://futureofindy.us19.list-manage.com/subscribe/post?u=7e739e6c5df440ff5e37d2a6b&id=a883200159&f_id=00f2c2e1f0";
+<!-- FORM -->
+<div class="formcard">
 
-    const form = document.getElementById("mc-embedded-subscribe-form");
-    const thankYou = document.getElementById("thankYou");
-    const inlineError = document.getElementById("inlineError");
-    const submitBtn = document.getElementById("mc-embedded-subscribe");
+<div class="thankyou" id="thankYou">
+  <h2>Thanks — you’re RSVP’d.</h2>
+  <p>We’ll send you a reminder before the town hall.</p>
+</div>
 
-    function serializeForm(formEl){
-      const data = new FormData(formEl);
-      const params = new URLSearchParams();
-      for (const [k,v] of data.entries()){
-        params.append(k, v);
-      }
-      return params.toString();
-    }
+<div id="mc_embed_signup">
+<form id="mc-embedded-subscribe-form" novalidate>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Address *</label>
+<input type="email" name="EMAIL" id="mce-EMAIL" required>
+</div>
 
-    window.mc_callback = function(resp){
-      submitBtn.disabled = false;
-      submitBtn.value = "Submit RSVP";
+<div class="mc-field-group">
+<label for="mce-MMERGE1">Will you attend? *</label>
+<select name="MMERGE1" id="mce-MMERGE1" required>
+<option value=""></option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+</div>
 
-      if (resp && resp.result === "success") {
-        inlineError.style.display = "none";
-        document.getElementById("mc_embed_signup").style.display = "none";
-        thankYou.style.display = "block";
-        return;
-      }
+<div class="mc-field-group">
+<label for="mce-MMERGE4">Mobile Phone *</label>
+<input type="text" name="MMERGE4" id="mce-MMERGE4" required>
+</div>
 
-      // Error
-      const msg = (resp && resp.msg) ? resp.msg.replace(/<[^>]*>?/gm, "") : "Something went wrong. Please try again.";
-      inlineError.textContent = msg;
-      inlineError.style.display = "block";
-    };
+<div style="margin-top:18px;">
+<input type="submit" class="button" value="Submit RSVP">
+</div>
+</form>
+</div>
+</div>
 
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
+<footer>
+<div class="paidfor">Paid for by McAuley for Congress</div>
+</footer>
 
-      inlineError.style.display = "none";
-      submitBtn.disabled = true;
-      submitBtn.value = "Submitting...";
-
-      // Convert action to Mailchimp JSONP endpoint
-      const jsonpUrl = FORM_ACTION_POST
-        .replace("/post?", "/post-json?")
-        + "&c=mc_callback&" + serializeForm(form);
-
-      // JSONP: inject a script tag
-      const script = document.createElement("script");
-      script.src = jsonpUrl;
-      script.async = true;
-
-      // Clean up old JSONP script tags
-      const old = document.getElementById("mc-jsonp");
-      if (old) old.remove();
-      script.id = "mc-jsonp";
-
-      document.body.appendChild(script);
-    });
-  </script>
+</div>
 </body>
 </html>
