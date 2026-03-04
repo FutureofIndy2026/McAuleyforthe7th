@@ -28,13 +28,32 @@ body{
   line-height:1.6;
 }
 
-/* Subtle American flag background */
+/* TOP PATRIOTIC BAR */
+.top-flag-bar{
+  height:8px;
+  width:100%;
+  background:linear-gradient(
+    to right,
+    #b22234 0%,
+    #b22234 33%,
+    #ffffff 33%,
+    #ffffff 66%,
+    var(--navy) 66%,
+    var(--navy) 100%
+  );
+}
+
+/* Subtle American flag background
+   Option A (recommended): upload a flag image to your repo and name it: american-flag-bg.png
+   then change the url below to: url('american-flag-bg.png')
+   Option B: keep the current online image url
+*/
 .flag-bg{
   position:fixed;
   inset:0;
   background:
-    linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
-    url('https://images.unsplash.com/photo-1520975958225-5f59e42f53c2?auto=format&fit=crop&w=1600&q=80');
+    linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)),
+    url('american-flag-bg.png');
   background-size:cover;
   background-position:center;
   z-index:-1;
@@ -50,9 +69,12 @@ body{
 h1{
   color:var(--navy);
   font-size:42px;
-  margin-bottom:25px;
+  margin:0 0 12px;
   font-weight:800;
+  letter-spacing:-.4px;
 }
+
+h1 + h1{ margin-top:0; margin-bottom:26px; }
 
 .event{
   background:#fff;
@@ -68,21 +90,37 @@ h1{
 .event div{margin:4px 0;}
 
 p{
-  max-width:850px;
+  max-width:900px;
   margin:0 auto 18px;
   color:var(--muted);
   font-size:19px;
 }
 
+/* HEADSHOT */
 .headshot{
-  margin:35px auto 10px;
+  margin:30px auto 10px;
 }
-
 .headshot img{
   width:260px;
+  max-width:85vw;
   border-radius:20px;
   box-shadow:0 15px 35px rgba(0,0,0,.15);
   border:4px solid #fff;
+}
+
+/* SUBTLE FLAG DIVIDER ABOVE FORM */
+.flag-divider{
+  height:6px;
+  max-width:950px;
+  margin:40px auto 0;
+  background:repeating-linear-gradient(
+    to right,
+    #b22234,
+    #b22234 40px,
+    #ffffff 40px,
+    #ffffff 80px
+  );
+  border-radius:4px;
 }
 
 /* Form Card */
@@ -92,7 +130,7 @@ p{
   border-radius:var(--radius);
   box-shadow:var(--shadow);
   max-width:950px;
-  margin:40px auto 0;
+  margin:14px auto 0;
   padding:30px;
   text-align:left;
 }
@@ -132,7 +170,7 @@ p{
 .thankyou h2{
   color:var(--navy);
   font-size:28px;
-  margin-bottom:10px;
+  margin:0 0 10px;
 }
 
 footer{
@@ -159,12 +197,17 @@ footer{
 
 <body>
 
+<!-- NEW: TOP FLAG BAR -->
+<div class="top-flag-bar"></div>
+
+<!-- BACKGROUND -->
 <div class="flag-bg"></div>
 
 <div class="wrap">
 
-<h1>7th District Indiana</h1>
-<h1>Community Town Hall</h1>
+<!-- NEW: FLAGS BY THE TITLES -->
+<h1>🇺🇸 7th District Indiana</h1>
+<h1>Community Town Hall 🇺🇸</h1>
 
 <div class="event">
   <div>Jerusalem Apostolic Church</div>
@@ -178,77 +221,79 @@ Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana�
 </p>
 
 <p>
-Since 2015, Patrick has been inolved in politics in all areas of government ranging from engaging in local grassroots leadership to interning for two U.S. Senators on Capitol Hill.
+Since 2015, Patrick has been engaged at every level of government — from grassroots leadership here at home to serving on Capitol Hill as an intern for two U.S. Senators. He has seen firsthand how policy decisions impact real families.
 </p>
 
 <p>
-In January of 2025, his team put out a districe wide survey that recieved over 350 responses from voters on topics ranging from parks and recreation, infrastructure, public safety, housing, career pathways, and the future of families and loved ones in the 7th district.
-</p>
-  
-<p>  
-With this survey, his team immediatley began a year of exploratory meetings with local and state level leaders on running for the 7th District Congressional seat. 
+In January 2025, Patrick’s team launched a district-wide survey that generated more than 350 responses from voters across the 7th. The message was clear: families care about affordability, public safety, housing stability, infrastructure, career pathways, and the long-term future of our neighborhoods.
 </p>
 
 <p>
-Conversations started at the local level by tying in more voices from across the district that led to ideas on how we can progress the district forward for the next 30 years and beyond.
+That feedback sparked a year of serious conversations with local and state leaders about the future of this district — conversations rooted in one question: How do we position the 7th District to thrive for the next 30 years?
 </p>
 
 <p>
-This campaign is about one thing and that's being a focused, determined, hands-on and consistent energetic leader for the 7th District of Indiana.
+This campaign is about focused, determined, hands-on leadership. It’s about building lasting momentum and positioning the 7th District for growth, stability, and long-term success. It’s about leading with energy, accountability, and a clear vision for the future.
 </p>
 
 <p>
-The spirit of the district is worth fighting for and Patrick and his team are ready to serve.
+The spirit of this district is strong. Its future is worth fighting for.
+</p>
+
+<p>
+Patrick and his team are ready to serve.
 </p>
 
 <p>
 The time is now.
 </p>
 
-
-<!-- HEADSHOT -->
+<!-- HEADSHOT: upload your photo into the same GitHub folder and name it: patrick-headshot.png -->
 <div class="headshot">
   <img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
 </div>
 
+<!-- NEW: FLAG DIVIDER -->
+<div class="flag-divider"></div>
+
 <!-- FORM -->
 <div class="formcard">
 
-<div class="thankyou" id="thankYou">
-  <h2>Thanks — you’re RSVP’d.</h2>
-  <p>We’ll send you a reminder before the town hall.</p>
-</div>
+  <div class="thankyou" id="thankYou">
+    <h2>Thanks — you’re RSVP’d.</h2>
+    <p>We’ll send you a reminder before the town hall.</p>
+  </div>
 
-<div id="mc_embed_signup">
-<form id="mc-embedded-subscribe-form" novalidate>
-<div class="mc-field-group">
-<label for="mce-EMAIL">Email Address *</label>
-<input type="email" name="EMAIL" id="mce-EMAIL" required>
-</div>
+  <div id="mc_embed_signup">
+    <form id="mc-embedded-subscribe-form" novalidate>
+      <div class="mc-field-group">
+        <label for="mce-EMAIL">Email Address *</label>
+        <input type="email" name="EMAIL" id="mce-EMAIL" required>
+      </div>
 
-<div class="mc-field-group">
-<label for="mce-MMERGE1">Will you attend? *</label>
-<select name="MMERGE1" id="mce-MMERGE1" required>
-<option value=""></option>
-<option value="Yes">Yes</option>
-<option value="No">No</option>
-</select>
-</div>
+      <div class="mc-field-group">
+        <label for="mce-MMERGE1">Will you attend? *</label>
+        <select name="MMERGE1" id="mce-MMERGE1" required>
+          <option value=""></option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
 
-<div class="mc-field-group">
-<label for="mce-MMERGE4">Mobile Phone *</label>
-<input type="text" name="MMERGE4" id="mce-MMERGE4" required>
-</div>
+      <div class="mc-field-group">
+        <label for="mce-MMERGE4">Mobile Phone *</label>
+        <input type="text" name="MMERGE4" id="mce-MMERGE4" required>
+      </div>
 
-<div style="margin-top:18px;">
-<input type="submit" class="button" value="Submit RSVP">
-</div>
-</form>
-</div>
+      <div style="margin-top:18px;">
+        <input type="submit" class="button" value="Submit RSVP">
+      </div>
+    </form>
+  </div>
 </div>
 
 <footer>
-<div class="paidfor">Paid for by McAuley for Congress</div>
+  <div class="paidfor">Paid for by McAuley for Congress</div>
 </footer>
 
 </div>
