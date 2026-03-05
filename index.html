@@ -193,10 +193,11 @@ footer{
 }
 
 /* ---------------------------
-   TITLE: FORCE ONE LINE ON MOBILE
+   TITLES: FORCE ONE LINE + MATCH SIZE ON MOBILE
    --------------------------- */
-.district-title{
-  white-space: nowrap;      /* prevent wrapping */
+.district-title,
+.sub-title{
+  white-space: nowrap; /* prevent wrapping */
 }
 
 /* Mobile layout tightening */
@@ -207,12 +208,15 @@ footer{
     padding-right: max(14px, env(safe-area-inset-right));
   }
 
-  /* Keep the district title on one line and sized to fit */
-  .district-title{
+  /* Make BOTH titles the same size on phones */
+  .district-title,
+  .sub-title{
     font-size: 22px;        /* tuned for iPhone widths */
     letter-spacing: -0.5px; /* helps fit cleanly */
+    line-height: 1.15;
   }
 
+  /* Keep general h1 fallback (won't override the classes above) */
   h1{
     font-size:32px;
     line-height:1.15;
@@ -236,7 +240,8 @@ footer{
 
 /* Extra-tight phones (older iPhones / small Android) */
 @media(max-width:390px){
-  .district-title{
+  .district-title,
+  .sub-title{
     font-size: 20px;
     letter-spacing: -0.6px;
   }
@@ -250,9 +255,9 @@ footer{
 
 <div class="wrap">
 
-<!-- UPDATED: add class here -->
+<!-- UPDATED TITLES (classes added) -->
 <h1 class="district-title">7th Congressional District of Indiana</h1>
-<h1>Community Town Hall</h1>
+<h1 class="sub-title">Community Town Hall</h1>
 
 <div class="event">
   <div>Jerusalem Apostolic Church</div>
