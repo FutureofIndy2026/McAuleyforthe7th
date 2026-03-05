@@ -20,6 +20,11 @@
 
 *{box-sizing:border-box}
 
+html, body{
+  width:100%;
+  overflow-x:hidden;
+}
+
 body{
   margin:0;
   font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
@@ -49,6 +54,10 @@ body{
   margin:0 auto;
   padding:60px 20px 80px;
   text-align:center;
+
+  /* iOS safe-area padding (notches) */
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
 }
 
 h1{
@@ -70,6 +79,8 @@ h1 + h1{ margin-top:0; margin-bottom:26px; }
   max-width:750px;
   box-shadow:var(--shadow);
   font-weight:600;
+
+  width:100%;
 }
 
 .event div{margin:4px 0;}
@@ -79,6 +90,14 @@ p{
   margin:0 auto 18px;
   color:var(--muted);
   font-size:19px;
+  text-wrap: pretty;
+}
+
+/* highlight underline for specified lines */
+.highlight{
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 /* HEADSHOT */
@@ -103,11 +122,20 @@ p{
   margin:14px auto 0;
   padding:30px;
   text-align:left;
+  width:100%;
+}
+
+/* Make Mailchimp embed responsive (it loves fixed widths) */
+#mc_embed_shell,
+#mc_embed_signup,
+#mc_embed_signup form,
+#mc_embed_signup_scroll{
+  width:100% !important;
+  max-width:100% !important;
 }
 
 #mc_embed_signup{
   background:transparent !important;
-  width:100% !important;
   font:inherit !important;
 }
 
@@ -118,17 +146,54 @@ p{
 
 #mc_embed_signup input,
 #mc_embed_signup select{
+  width:100% !important;
+  max-width:100% !important;
   border-radius:12px !important;
   border:1px solid var(--border) !important;
   padding:12px !important;
-  font-size:16px !important;
+  font-size:16px !important; /* prevents iOS zoom */
+  line-height:1.2 !important;
 }
 
-#mc_embed_signup .button{
+/* Improve tap targets */
+#mc_embed_signup .mc-field-group{
+  margin-bottom:14px !important;
+}
+
+/* Fix button clipping + make it mobile-friendly */
+#mc_embed_signup .button,
+#mc-embedded-subscribe{
   background:var(--navy) !important;
   border-radius:999px !important;
   font-weight:800 !important;
-  padding:12px 18px !important;
+
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:100% !important;
+  max-width:100% !important;
+
+  height:52px !important;
+  line-height:52px !important;
+  padding:0 18px !important;
+
+  font-size:18px !important;
+  -webkit-appearance:none !important;
+  appearance:none !important;
+}
+
+/* Center the submit row */
+#mc_embed_signup .clear.foot{
+  display:flex !important;
+  justify-content:center !important;
+}
+
+/* Hide Mailchimp referral badge/logo area */
+#mc_embed_signup .refferal_badge,
+#mc_embed_signup .brandingLogo,
+#mc_embed_signup p a[title*="Mailchimp"]{
+  display:none !important;
 }
 
 .thankyou{
@@ -157,10 +222,38 @@ footer{
   color:var(--navy);
 }
 
+/* Mobile layout tightening */
 @media(max-width:600px){
-  h1{font-size:34px;}
-  p{font-size:17px;}
-  .formcard{padding:20px;}
+  .wrap{
+    padding:34px 14px 60px;
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+  }
+
+  h1{
+    font-size:32px;
+    line-height:1.15;
+    margin-bottom:10px;
+  }
+
+  p{
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  .event{
+    padding:14px 14px;
+    margin-bottom:22px;
+  }
+
+  .formcard{
+    padding:18px 14px;
+    border-radius:16px;
+  }
+
+  .headshot img{
+    width:220px;
+  }
 }
 </style>
 </head>
@@ -201,12 +294,12 @@ That feedback sparked a year of serious conversations rooted in one question: Ho
 </p>
 
 <p>
-Over the course of the next few months, Patrick and his campaign team are hosting a series of community town halls. These events are intended to ensure that the campaign remains 
+Over the course of the next few months, Patrick and his campaign team are hosting a series of community town halls. These events are intended to ensure that the campaign remains
 <span class="highlight">rooted in the voices of the community that will build a strong framework for the future</span>.
 </p>
 
 <p>
-Patrick and his team aim to continue building a broad coalition committed to strengthening communities, expanding opportunity, and 
+Patrick and his team aim to continue building a broad coalition committed to strengthening communities, expanding opportunity, and
 <span class="highlight">positioning the district for long-term success through focused, determined, hands-on and consistent energetic leadership</span>.
 </p>
 
@@ -307,50 +400,6 @@ The time is now.
 }(jQuery));
 var $mcj = jQuery.noConflict(true);
 </script>
-
-<!-- ADD THESE OVERRIDES (prevents clipped RSVP text + better layout) -->
-<style>
-  /* Remove Mailchimp's fixed width + inherit your page fonts */
-  #mc_embed_signup{
-    width: 100% !important;
-    max-width: 100% !important;
-    background: transparent !important;
-    font-family: inherit !important;
-    font-size: inherit !important;
-    clear: both !important;
-  }
-
-  /* Make inputs match your site & avoid weird sizing */
-  #mc_embed_signup input,
-  #mc_embed_signup select{
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* CENTER THE BUTTON ROW */
-  #mc_embed_signup .clear.foot{
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  /* Fix button text clipping + make it consistent */
-  #mc_embed_signup .button,
-  #mc-embedded-subscribe{
-    height: auto !important;
-    min-height: 52px !important;
-    line-height: 52px !important; /* key fix for text cutting off */
-    padding: 0 26px !important;
-    font-size: 16px !important;
-    font-weight: 800 !important;
-    border-radius: 999px !important;
-    display: inline-block !important;
-    vertical-align: middle !important;
-    margin: 0 !important;
-  }
-
-  /* OPTIONAL: hide Mailchimp referral badge if you don't want it */
-  /* #mc_embed_signup .refferal_badge { display:none !important; } */
-</style>
 
 <footer>
   <div class="paidfor">Paid for by McAuley for Congress</div>
