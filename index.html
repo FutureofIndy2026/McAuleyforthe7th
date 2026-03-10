@@ -51,7 +51,6 @@ body{
   padding:60px 20px 80px;
   text-align:center;
 
-  /* iOS safe-area padding (notches) */
   padding-left: max(20px, env(safe-area-inset-left));
   padding-right: max(20px, env(safe-area-inset-right));
 }
@@ -88,7 +87,7 @@ p{
   text-wrap: pretty;
 }
 
-/* highlight underline for specified lines */
+/* highlight underline */
 .highlight{
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -99,6 +98,7 @@ p{
 .headshot{
   margin:30px auto 10px;
 }
+
 .headshot img{
   width:260px;
   max-width:85vw;
@@ -107,7 +107,7 @@ p{
   border:4px solid #fff;
 }
 
-/* Make Mailchimp embed responsive (it loves fixed widths) */
+/* Mailchimp responsive */
 #mc_embed_shell,
 #mc_embed_signup,
 #mc_embed_signup form,
@@ -133,58 +133,65 @@ p{
   border-radius:12px !important;
   border:1px solid var(--border) !important;
   padding:12px !important;
-  font-size:16px !important; /* prevents iOS zoom */
-  line-height:1.2 !important;
+  font-size:16px !important;
 }
 
-/* Improve tap targets */
 #mc_embed_signup .mc-field-group{
   margin-bottom:14px !important;
 }
 
-/* Fix button clipping + make it mobile-friendly */
 #mc_embed_signup .button,
 #mc-embedded-subscribe{
   background:var(--navy) !important;
   border-radius:999px !important;
   font-weight:800 !important;
-
   display:inline-flex !important;
   align-items:center !important;
   justify-content:center !important;
-
   width:100% !important;
-  max-width:100% !important;
-
   height:52px !important;
-  line-height:52px !important;
-  padding:0 18px !important;
-
   font-size:18px !important;
-  -webkit-appearance:none !important;
-  appearance:none !important;
 }
 
-/* Center the submit row */
+/* Center button row */
 #mc_embed_signup .clear.foot{
   display:flex !important;
   justify-content:center !important;
 }
 
-/* Hide Mailchimp referral badge/logo area */
+/* Hide Mailchimp branding */
 #mc_embed_signup .refferal_badge,
 #mc_embed_signup .brandingLogo,
 #mc_embed_signup p a[title*="Mailchimp"]{
   display:none !important;
 }
 
+/* Survey button */
+.survey-btn{
+  display:block;
+  width:max-content;
+  background:#0b1f3a;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:18px;
+  text-decoration:none;
+  margin:40px auto;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  transition:.2s ease;
+}
+
+.survey-btn:hover{
+  background:#132f55;
+}
+
 footer{
-  margin-top:60px;
+  margin-top:40px;
   padding-top:25px;
   border-top:1px solid var(--border);
   color:var(--muted);
   font-size:13px;
-  text-align:center;
 }
 
 .paidfor{
@@ -192,59 +199,40 @@ footer{
   color:var(--navy);
 }
 
-/* ---------------------------
-   TITLES: FORCE ONE LINE + MATCH SIZE ON MOBILE
-   --------------------------- */
+/* Mobile titles */
 .district-title,
 .sub-title{
-  white-space: nowrap; /* prevent wrapping */
+  white-space:nowrap;
 }
 
-/* Mobile layout tightening */
 @media(max-width:600px){
-  .wrap{
-    padding:34px 14px 60px;
-    padding-left: max(14px, env(safe-area-inset-left));
-    padding-right: max(14px, env(safe-area-inset-right));
-  }
 
-  /* Make BOTH titles the same size on phones */
-  .district-title,
-  .sub-title{
-    font-size: 22px;        /* tuned for iPhone widths */
-    letter-spacing: -0.5px; /* helps fit cleanly */
-    line-height: 1.15;
-  }
-
-  /* Keep general h1 fallback (won't override the classes above) */
-  h1{
-    font-size:32px;
-    line-height:1.15;
-    margin-bottom:10px;
-  }
-
-  p{
-    font-size:16px;
-    line-height:1.6;
-  }
-
-  .event{
-    padding:14px 14px;
-    margin-bottom:22px;
-  }
-
-  .headshot img{
-    width:220px;
-  }
+.district-title,
+.sub-title{
+  font-size:22px;
 }
 
-/* Extra-tight phones (older iPhones / small Android) */
+h1{
+  font-size:32px;
+}
+
+p{
+  font-size:16px;
+}
+
+.headshot img{
+  width:220px;
+}
+
+}
+
 @media(max-width:390px){
-  .district-title,
-  .sub-title{
-    font-size: 20px;
-    letter-spacing: -0.6px;
-  }
+
+.district-title,
+.sub-title{
+  font-size:20px;
+}
+
 }
 </style>
 </head>
@@ -255,16 +243,15 @@ footer{
 
 <div class="wrap">
 
-<!-- UPDATED TITLES (classes added) -->
 <h1 class="district-title">7th Congressional District of Indiana</h1>
 <h1 class="sub-title">Community Town Hall</h1>
 
 <div class="event">
-  <div>Jerusalem Temple Assembly</div>
-  <div>2125 E 54th St, Indianapolis, IN</div>
-  <div>Wednesday, March 18th</div>
-  <div>6:30 PM (Doors open 30 minutes early)</div>
-  <div>Refreshments will be provided</div>
+<div>Jerusalem Temple Assembly</div>
+<div>2125 E 54th St, Indianapolis, IN</div>
+<div>Wednesday, March 18th</div>
+<div>6:30 PM (Doors open 30 minutes early)</div>
+<div>Refreshments will be provided</div>
 </div>
 
 <p>
@@ -287,94 +274,75 @@ In January 2025, Patrick’s team launched a district-wide survey that generated
 <span class="highlight">Using the relationships he has built over the course of ten years, Patrick and his team will use the current Republican Party's platform to bring those resources into the 7th District</span>.
 </p>
 
-<p>
-The time is now.
-</p>
+<p>The time is now.</p>
 
 <div class="headshot">
-  <img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
+<img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
 </div>
 
 <div id="mc_embed_shell">
-  <div id="mc_embed_signup">
-    <form action="https://futureofindy.us19.list-manage.com/subscribe/post?u=7e739e6c5df440ff5e37d2a6b&amp;id=a883200159&amp;f_id=00f2c2e1f0"
-          method="post"
-          id="mc-embedded-subscribe-form"
-          name="mc-embedded-subscribe-form"
-          class="validate"
-          target="_blank"
-          novalidate>
+<div id="mc_embed_signup">
 
-      <div id="mc_embed_signup_scroll">
-        <div class="indicates-required">
-          <span class="asterisk">*</span> indicates required
-        </div>
+<form action="https://futureofindy.us19.list-manage.com/subscribe/post?u=7e739e6c5df440ff5e37d2a6b&amp;id=a883200159&amp;f_id=00f2c2e1f0"
+method="post"
+id="mc-embedded-subscribe-form"
+target="_blank">
 
-        <div class="mc-field-group">
-          <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-          <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
-        </div>
+<div id="mc_embed_signup_scroll">
 
-        <div class="mc-field-group">
-          <label for="mce-MMERGE4">Mobile Phone <span class="asterisk">*</span></label>
-          <input type="text" name="MMERGE4" class="required text" id="mce-MMERGE4" required value="">
-          <span id="mce-MMERGE4-HELPERTEXT" class="helper_text">*for reminders</span>
-        </div>
-
-        <div class="mc-field-group">
-          <label for="mce-MMERGE1">Will you be at the town hall? <span class="asterisk">*</span></label>
-          <select name="MMERGE1" class="required" id="mce-MMERGE1" required>
-            <option value=""></option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
-        </div>
-
-        <div class="mc-field-group">
-          <label for="mce-MMERGE6">How many people in your party?</label>
-          <select name="MMERGE6" id="mce-MMERGE6">
-            <option value=""></option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4+">4+</option>
-          </select>
-        </div>
-
-        <div id="mce-responses" class="clear foot" style="margin-top: 10px;">
-          <div class="response" id="mce-error-response" style="display:none;"></div>
-          <div class="response" id="mce-success-response" style="display:none;"></div>
-        </div>
-
-        <div aria-hidden="true" style="position:absolute; left:-5000px;">
-          <input type="text" name="b_7e739e6c5df440ff5e37d2a6b_a883200159" tabindex="-1" value="">
-        </div>
-
-        <div class="optionalParent">
-          <div class="clear foot" style="margin-top: 14px;">
-            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="RSVP">
-          </div>
-        </div>
-
-      </div>
-    </form>
-  </div>
+<div class="indicates-required">
+<span class="asterisk">*</span> indicates required
 </div>
 
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-<script type="text/javascript">
-(function($) {
-  window.fnames = new Array(); window.ftypes = new Array();
-  fnames[0]='EMAIL'; ftypes[0]='email';
-  fnames[4]='MMERGE4'; ftypes[4]='text';
-  fnames[1]='MMERGE1'; ftypes[1]='dropdown';
-  fnames[6]='MMERGE6'; ftypes[6]='dropdown';
-}(jQuery));
-var $mcj = jQuery.noConflict(true);
-</script>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Address *</label>
+<input type="email" name="EMAIL" id="mce-EMAIL" required>
+</div>
+
+<div class="mc-field-group">
+<label for="mce-MMERGE4">Mobile Phone *</label>
+<input type="text" name="MMERGE4" id="mce-MMERGE4" required>
+</div>
+
+<div class="mc-field-group">
+<label for="mce-MMERGE1">Will you be at the town hall? *</label>
+<select name="MMERGE1" id="mce-MMERGE1" required>
+<option value=""></option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+</div>
+
+<div class="mc-field-group">
+<label for="mce-MMERGE6">How many people in your party?</label>
+<select name="MMERGE6" id="mce-MMERGE6">
+<option value=""></option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4+">4+</option>
+</select>
+</div>
+
+<div class="clear foot">
+<input type="submit" class="button" value="RSVP">
+</div>
+
+</div>
+</form>
+
+</div>
+</div>
+
+<!-- Community Survey Button -->
+<a class="survey-btn"
+href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
+target="_blank">
+Please Take Our Community Priorities Survey
+</a>
 
 <footer>
-  <div class="paidfor">Paid for by McAuley for Congress</div>
+<div class="paidfor">Paid for by McAuley for Congress</div>
 </footer>
 
 </div>
