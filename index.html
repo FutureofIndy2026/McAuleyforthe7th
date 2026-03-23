@@ -48,7 +48,6 @@ body{
   margin:0 auto;
   padding:60px 20px 80px;
   text-align:center;
-
   padding-left: max(20px, env(safe-area-inset-left));
   padding-right: max(20px, env(safe-area-inset-right));
 }
@@ -61,7 +60,10 @@ h1{
   letter-spacing:-.4px;
 }
 
-h1 + h1{ margin-top:0; margin-bottom:26px; }
+h1 + h1{
+  margin-top:0;
+  margin-bottom:26px;
+}
 
 .event{
   background:#fff;
@@ -82,14 +84,14 @@ p{
   margin:0 auto 18px;
   color:var(--muted);
   font-size:19px;
-  text-wrap: pretty;
+  text-wrap:pretty;
 }
 
 /* highlight underline */
 .highlight{
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:3px;
 }
 
 /* HEADSHOT */
@@ -204,33 +206,29 @@ footer{
 }
 
 @media(max-width:600px){
+  .district-title,
+  .sub-title{
+    font-size:22px;
+  }
 
-.district-title,
-.sub-title{
-  font-size:22px;
-}
+  h1{
+    font-size:32px;
+  }
 
-h1{
-  font-size:32px;
-}
+  p{
+    font-size:16px;
+  }
 
-p{
-  font-size:16px;
-}
-
-.headshot img{
-  width:220px;
-}
-
+  .headshot img{
+    width:220px;
+  }
 }
 
 @media(max-width:390px){
-
-.district-title,
-.sub-title{
-  font-size:20px;
-}
-
+  .district-title,
+  .sub-title{
+    font-size:20px;
+  }
 }
 </style>
 </head>
@@ -241,57 +239,53 @@ p{
 
 <div class="wrap">
 
-<h1 class="district-title">Patrick McAuley</h1>
-<h1 class="sub-title">Republican Candidate</h1>
-<h1 class="sub-title">U.S. House of Representatives</h1>
-<h1 class="sub-title">Indiana's 7th Congressional District</h1>
+  <h1 class="district-title">Patrick McAuley</h1>
+  <h1 class="sub-title">Republican Candidate</h1>
+  <h1 class="sub-title">U.S. House of Representatives</h1>
+  <h1 class="sub-title">Indiana's 7th Congressional District</h1>
 
-<div class="headshot">
-<img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
-</div>
+  <div class="headshot">
+    <img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
+  </div>
 
-<p>
-Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana’s 7th District.
-</p>
+  <p>
+    Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana’s 7th District.
+  </p>
 
-<p>
-Since 2015, Patrick has been engaged at every level of government — from grassroots leadership here in Indiana to serving on Capitol Hill as an intern for two U.S. Senators. He has seen firsthand how policy decisions impact families and their loved ones.
-</p>
+  <p>
+    Since 2015, Patrick has been engaged at every level of government — from grassroots leadership here in Indiana to serving on Capitol Hill as an intern for two U.S. Senators. He has seen firsthand how policy decisions impact families and their loved ones.
+  </p>
 
-<p>
-In January 2025, Patrick’s team launched a district-wide survey that generated more than 350 responses from voters across the 7th District. The message was clear: families care about affordability, public safety, housing stability, career pathways, and the long-term future of our communities.
-</p>
+  <p>
+    In January 2025, Patrick’s team launched a district-wide survey that generated more than 350 responses from voters across the 7th District. The message was clear: families care about affordability, public safety, housing stability, career pathways, and the long-term future of our communities.
+  </p>
 
-<p>
-<span class="highlight">Right now the current leadership in Washington and here in Indiana favors the Republican Party. If we are going to bring change, we need to have the financial resources necessary to provide for infrastructure, public safety, housing, and creating great jobs for the next generation</span>.
-</p>
+  <p>
+    <span class="highlight">Right now the current leadership in Washington and here in Indiana favors the Republican Party. If we are going to bring change, we need to have the financial resources necessary to provide for infrastructure, public safety, housing, and creating great jobs for the next generation</span>.
+  </p>
 
-<p>
-<span class="highlight">Using the relationships he has built over the course of ten years, Patrick and his team will use the current Republican Party's platform to bring those resources into the 7th District</span>.
-</p>
+  <p>
+    <span class="highlight">Using the relationships he has built over the course of ten years, Patrick and his team will use the current Republican Party's platform to bring those resources into the 7th District</span>.
+  </p>
 
-<p>The time is now.</p>
+  <p>The time is now.</p>
 
-<div class="headshot">
-<img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
-</div>
+  <!-- Community Survey Button -->
+  <a class="survey-btn"
+     href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
+     target="_blank">
+    Please Take Our Survey
+  </a>
 
-<!-- Community Survey Button -->
-<a class="survey-btn"
-href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
-target="_blank">
-Please Take Our Survey
-</a>
+  <a class="survey-btn"
+     href="https://secure.winred.com/mcauley-for-congress/donate-today"
+     target="_blank">
+    Donate
+  </a>
 
-<a class="survey-btn"
-href="https://secure.winred.com/mcauley-for-congress/donate-today"
-target="_blank">
-Donate
-</a>
-
-<footer>
-<div class="paidfor">Paid for by McAuley for Congress</div>
-</footer>
+  <footer>
+    <div class="paidfor">Paid for by McAuley for Congress</div>
+  </footer>
 
 </div>
 </body>
