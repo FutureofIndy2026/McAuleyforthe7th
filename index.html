@@ -14,6 +14,8 @@
   --shadow:0 10px 30px rgba(2,6,23,.08);
   --radius:18px;
   --max:1100px;
+  --red:#dc2626;
+  --red-hover:#b91c1c;
 }
 
 *{box-sizing:border-box}
@@ -48,8 +50,8 @@ body{
   margin:0 auto;
   padding:60px 20px 80px;
   text-align:center;
-  padding-left: max(20px, env(safe-area-inset-left));
-  padding-right: max(20px, env(safe-area-inset-right));
+  padding-left:max(20px, env(safe-area-inset-left));
+  padding-right:max(20px, env(safe-area-inset-right));
 }
 
 h1{
@@ -107,6 +109,36 @@ p{
   border:4px solid #fff;
 }
 
+/* Top button row */
+.top-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:0 auto 34px;
+}
+
+.top-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--red);
+  color:#fff;
+  padding:14px 24px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:16px;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  transition:.2s ease;
+  min-width:120px;
+}
+
+.top-btn:hover{
+  background:var(--red-hover);
+  transform:translateY(-1px);
+}
+
 /* Mailchimp responsive */
 #mc_embed_shell,
 #mc_embed_signup,
@@ -142,7 +174,7 @@ p{
 
 #mc_embed_signup .button,
 #mc-embedded-subscribe{
-  background:var(--navy) !important;
+  background:var(--red) !important;
   border-radius:999px !important;
   font-weight:800 !important;
   display:inline-flex !important;
@@ -151,6 +183,11 @@ p{
   width:100% !important;
   height:52px !important;
   font-size:18px !important;
+}
+
+#mc_embed_signup .button:hover,
+#mc-embedded-subscribe:hover{
+  background:var(--red-hover) !important;
 }
 
 /* Center button row */
@@ -170,7 +207,7 @@ p{
 .survey-btn{
   display:block;
   width:max-content;
-  background:#0b1f3a;
+  background:var(--red);
   color:#fff;
   padding:14px 28px;
   border-radius:999px;
@@ -183,7 +220,7 @@ p{
 }
 
 .survey-btn:hover{
-  background:#132f55;
+  background:var(--red-hover);
 }
 
 footer{
@@ -222,6 +259,11 @@ footer{
   .headshot img{
     width:220px;
   }
+
+  .top-btn{
+    width:100%;
+    max-width:260px;
+  }
 }
 
 @media(max-width:390px){
@@ -239,12 +281,35 @@ footer{
 
 <div class="wrap">
 
- <!-- Community Survey Button -->
-  <a class="survey-btn"
-     href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
-     target="_blank">
-    Please Take Our Survey
-  </a>
+  <div class="top-buttons">
+    <a class="top-btn"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
+       target="_blank"
+       rel="noopener noreferrer">
+      Survey
+    </a>
+
+    <a class="top-btn"
+       href="https://secure.winred.com/mcauley-for-congress/donate-today"
+       target="_blank"
+       rel="noopener noreferrer">
+      Donate
+    </a>
+
+    <a class="top-btn"
+       href="https://instagram.com/YOUR_HANDLE"
+       target="_blank"
+       rel="noopener noreferrer">
+      Instagram
+    </a>
+
+    <a class="top-btn"
+       href="https://twitter.com/YOUR_HANDLE"
+       target="_blank"
+       rel="noopener noreferrer">
+      Twitter
+    </a>
+  </div>
 
   <h1 class="district-title">Patrick McAuley</h1>
   <h1 class="sub-title">Republican Candidate</h1>
@@ -276,12 +341,6 @@ footer{
   </p>
 
   <p>The time is now.</p>
-
-  <a class="survey-btn"
-     href="https://secure.winred.com/mcauley-for-congress/donate-today"
-     target="_blank">
-    Donate
-  </a>
 
   <footer>
     <div class="paidfor">Paid for by McAuley for Congress</div>
