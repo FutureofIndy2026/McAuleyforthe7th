@@ -12,7 +12,8 @@
   --muted:#475569;
   --border:#e2e8f0;
   --shadow:0 10px 30px rgba(2,6,23,.08);
-  --max:1100px;
+  --radius:18px;
+  --max:900px; /* UPDATED */
   --red:#dc2626;
   --red-hover:#b91c1c;
 }
@@ -32,7 +33,7 @@ body{
   line-height:1.6;
 }
 
-/* Background */
+/* Subtle American flag background */
 .flag-bg{
   position:fixed;
   inset:0;
@@ -47,8 +48,10 @@ body{
 .wrap{
   max-width:var(--max);
   margin:0 auto;
-  padding:60px 20px 80px;
+  padding:60px 28px 80px; /* UPDATED */
   text-align:center;
+  padding-left:max(28px, env(safe-area-inset-left));
+  padding-right:max(28px, env(safe-area-inset-right));
 }
 
 h1{
@@ -56,82 +59,84 @@ h1{
   font-size:42px;
   margin:0 0 12px;
   font-weight:800;
+  letter-spacing:-.4px;
 }
 
 h1 + h1{
+  margin-top:0;
   margin-bottom:26px;
 }
+
+.event{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px 22px;
+  margin:0 auto 35px;
+  max-width:750px;
+  box-shadow:var(--shadow);
+  font-weight:600;
+  width:100%;
+}
+
+.event div{margin:4px 0;}
 
 p{
   max-width:900px;
   margin:0 auto 18px;
   color:var(--muted);
   font-size:19px;
+  text-wrap:pretty;
 }
 
-/* Survey Button */
-.survey-btn{
+/* highlight underline */
+.highlight{
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:3px;
+}
+
+/* HEADSHOT */
+.headshot{
+  margin:30px auto 10px;
+}
+
+.headshot img{
+  width:260px;
+  max-width:85vw;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  border:4px solid #fff;
+}
+
+/* Top button row */
+.top-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:0 auto 34px;
+}
+
+.top-btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   background:var(--red);
   color:#fff;
-  padding:16px 34px;
+  padding:14px 24px;
   border-radius:999px;
   font-weight:800;
-  font-size:20px;
+  font-size:16px;
   text-decoration:none;
-  margin-bottom:40px;
-  box-shadow:0 10px 24px rgba(0,0,0,.15);
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
   transition:.2s ease;
+  min-width:120px;
 }
 
-.survey-btn:hover{
+.top-btn:hover{
   background:var(--red-hover);
   transform:translateY(-1px);
-}
-
-/* Headshot */
-.headshot img{
-  width:260px;
-  border-radius:20px;
-  box-shadow:0 15px 35px rgba(0,0,0,.15);
-  border:4px solid #fff;
-  margin:30px 0 10px;
-}
-
-/* Highlight */
-.highlight{
-  text-decoration:underline;
-}
-
-/* Social icons */
-.social-links{
-  margin-top:20px;
-  display:flex;
-  justify-content:center;
-  gap:18px;
-}
-
-.social-links a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:#f1f5f9;
-  transition:.2s ease;
-}
-
-.social-links a:hover{
-  background:#e2e8f0;
-  transform:translateY(-2px);
-}
-
-.social-links img{
-  width:20px;
-  height:20px;
 }
 
 /* Footer */
@@ -139,8 +144,8 @@ footer{
   margin-top:40px;
   padding-top:25px;
   border-top:1px solid var(--border);
-  font-size:13px;
   color:var(--muted);
+  font-size:13px;
 }
 
 .paidfor{
@@ -150,9 +155,34 @@ footer{
 
 /* Mobile */
 @media(max-width:600px){
-  h1{font-size:32px;}
-  p{font-size:16px;}
-  .headshot img{width:220px;}
+  .district-title,
+  .sub-title{
+    font-size:22px;
+  }
+
+  h1{
+    font-size:32px;
+  }
+
+  p{
+    font-size:16px;
+  }
+
+  .headshot img{
+    width:220px;
+  }
+
+  .top-btn{
+    width:100%;
+    max-width:260px;
+  }
+}
+
+@media(max-width:390px){
+  .district-title,
+  .sub-title{
+    font-size:20px;
+  }
 }
 </style>
 </head>
@@ -163,55 +193,48 @@ footer{
 
 <div class="wrap">
 
-  <a class="survey-btn"
-     href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
-     target="_blank">
-    Please Take Our Survey
-  </a>
+  <div class="top-buttons">
+    <a class="top-btn"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
+       target="_blank"
+       rel="noopener noreferrer">
+      Please Take Our Survey
+    </a>
+  </div>
 
-  <h1>Patrick McAuley</h1>
-  <h1>Republican Candidate</h1>
-  <h1>U.S. House of Representatives</h1>
-  <h1>Indiana's 7th Congressional District</h1>
+  <h1 class="district-title">Patrick McAuley</h1>
+  <h1 class="sub-title">Republican Candidate</h1>
+  <h1 class="sub-title">U.S. House of Representatives</h1>
+  <h1 class="sub-title">Indiana's 7th Congressional District</h1>
 
   <div class="headshot">
     <img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
   </div>
 
   <p>
-    Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana’s 7th District.
+    Patrick McAuley is a Republican candidate for the U.S. House of Representatives in Indiana’s 7th District.
   </p>
 
   <p>
-    Since 2015, Patrick has been engaged at every level of government — from grassroots leadership in Indiana to serving on Capitol Hill.
+    Since 2015, Patrick has been engaged at every level of government — from grassroots leadership here in Indiana to serving on Capitol Hill as an intern for two U.S. Senators. He has seen firsthand how policy decisions impact families and their loved ones.
   </p>
 
   <p>
-    More than 350 residents across the district have already shared their priorities through our community survey — highlighting affordability, public safety, housing, and job opportunities.
+    In January 2025, Patrick’s team launched a district-wide survey that generated more than 350 responses from voters across the 7th District. The message was clear. Families care about affordability, public safety, housing stability, career pathways, and the long-term future of our communities.
   </p>
 
   <p>
-    <span class="highlight">
-      With Republican leadership at both the state and federal level, we have a unique opportunity to deliver real results for Indiana’s 7th District.
-    </span>
+    <span class="highlight">Right now the current leadership in Washington and here in Indiana favors the Republican Party. If we are going to bring change, we need to have the financial resources necessary to provide for infrastructure, public safety, housing, and creating great jobs for the next generation</span>.
+  </p>
+
+  <p>
+    <span class="highlight">Using the relationships he has built over the course of ten years, Patrick and his team will use the current Republican Party's platform to bring those resources into the 7th District</span>.
   </p>
 
   <p>The time is now.</p>
 
   <footer>
-
-    <div class="social-links">
-      <a href="https://instagram.com/mcauleyforthe7th" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-      </a>
-
-      <a href="https://x.com/mcauleyforIN07" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X">
-      </a>
-    </div>
-
     <div class="paidfor">Paid for by McAuley for Congress</div>
-
   </footer>
 
 </div>
