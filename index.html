@@ -13,9 +13,7 @@
   --border:#e2e8f0;
   --shadow:0 10px 30px rgba(2,6,23,.08);
   --radius:18px;
-  --max:900px;
-  --red:#dc2626;
-  --red-hover:#b91c1c;
+  --max:1100px;
 }
 
 *{box-sizing:border-box}
@@ -33,6 +31,7 @@ body{
   line-height:1.6;
 }
 
+/* Subtle American flag background */
 .flag-bg{
   position:fixed;
   inset:0;
@@ -47,10 +46,10 @@ body{
 .wrap{
   max-width:var(--max);
   margin:0 auto;
-  padding:60px 28px 80px;
+  padding:60px 20px 80px;
   text-align:center;
-  padding-left:max(28px, env(safe-area-inset-left));
-  padding-right:max(28px, env(safe-area-inset-right));
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
 }
 
 h1{
@@ -66,20 +65,36 @@ h1 + h1{
   margin-bottom:26px;
 }
 
+.event{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px 22px;
+  margin:0 auto 35px;
+  max-width:750px;
+  box-shadow:var(--shadow);
+  font-weight:600;
+  width:100%;
+}
+
+.event div{margin:4px 0;}
+
 p{
-  max-width:680px;
+  max-width:900px;
   margin:0 auto 18px;
   color:var(--muted);
   font-size:19px;
   text-wrap:pretty;
 }
 
+/* highlight underline */
 .highlight{
   text-decoration:underline;
   text-decoration-thickness:2px;
   text-underline-offset:3px;
 }
 
+/* HEADSHOT */
 .headshot{
   margin:30px auto 10px;
 }
@@ -92,31 +107,83 @@ p{
   border:4px solid #fff;
 }
 
-/* Top button row */
-.top-buttons{
-  display:flex;
-  justify-content:center;
-  margin:0 auto 34px;
+/* Mailchimp responsive */
+#mc_embed_shell,
+#mc_embed_signup,
+#mc_embed_signup form,
+#mc_embed_signup_scroll{
+  width:100% !important;
+  max-width:100% !important;
 }
 
-.top-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:var(--red); /* RED BUTTON */
+#mc_embed_signup{
+  background:transparent !important;
+  font:inherit !important;
+}
+
+#mc_embed_signup .mc-field-group label{
+  font-weight:700 !important;
+  color:var(--text) !important;
+}
+
+#mc_embed_signup input,
+#mc_embed_signup select{
+  width:100% !important;
+  max-width:100% !important;
+  border-radius:12px !important;
+  border:1px solid var(--border) !important;
+  padding:12px !important;
+  font-size:16px !important;
+}
+
+#mc_embed_signup .mc-field-group{
+  margin-bottom:14px !important;
+}
+
+#mc_embed_signup .button,
+#mc-embedded-subscribe{
+  background:var(--navy) !important;
+  border-radius:999px !important;
+  font-weight:800 !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  height:52px !important;
+  font-size:18px !important;
+}
+
+/* Center button row */
+#mc_embed_signup .clear.foot{
+  display:flex !important;
+  justify-content:center !important;
+}
+
+/* Hide Mailchimp branding */
+#mc_embed_signup .refferal_badge,
+#mc_embed_signup .brandingLogo,
+#mc_embed_signup p a[title*="Mailchimp"]{
+  display:none !important;
+}
+
+/* Survey button */
+.survey-btn{
+  display:block;
+  width:max-content;
+  background:#0b1f3a;
   color:#fff;
   padding:14px 28px;
   border-radius:999px;
   font-weight:800;
   font-size:18px;
   text-decoration:none;
+  margin:40px auto;
   box-shadow:0 8px 20px rgba(0,0,0,.12);
   transition:.2s ease;
 }
 
-.top-btn:hover{
-  background:var(--red-hover);
-  transform:translateY(-1px);
+.survey-btn:hover{
+  background:#132f55;
 }
 
 footer{
@@ -132,19 +199,35 @@ footer{
   color:var(--navy);
 }
 
-/* Mobile */
+/* Mobile titles */
+.district-title,
+.sub-title{
+  white-space:nowrap;
+}
+
 @media(max-width:600px){
+  .district-title,
+  .sub-title{
+    font-size:22px;
+  }
+
   h1{
     font-size:32px;
   }
 
   p{
     font-size:16px;
-    max-width:100%;
   }
 
   .headshot img{
     width:220px;
+  }
+}
+
+@media(max-width:390px){
+  .district-title,
+  .sub-title{
+    font-size:20px;
   }
 }
 </style>
@@ -156,15 +239,12 @@ footer{
 
 <div class="wrap">
 
-  <!-- ONLY SURVEY BUTTON -->
-  <div class="top-buttons">
-    <a class="top-btn"
-       href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
-       target="_blank"
-       rel="noopener noreferrer">
-      Please Take Our Survey
-    </a>
-  </div>
+ <!-- Community Survey Button -->
+  <a class="survey-btn"
+     href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
+     target="_blank">
+    Please Take Our Survey
+  </a>
 
   <h1 class="district-title">Patrick McAuley</h1>
   <h1 class="sub-title">Republican Candidate</h1>
@@ -176,7 +256,7 @@ footer{
   </div>
 
   <p>
-    Patrick McAuley is a Republican candidate for the U.S. House of Representatives in Indiana’s 7th District.
+    Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana’s 7th District.
   </p>
 
   <p>
@@ -196,6 +276,12 @@ footer{
   </p>
 
   <p>The time is now.</p>
+
+  <a class="survey-btn"
+     href="https://secure.winred.com/mcauley-for-congress/donate-today"
+     target="_blank">
+    Donate
+  </a>
 
   <footer>
     <div class="paidfor">Paid for by McAuley for Congress</div>
