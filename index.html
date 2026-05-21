@@ -94,30 +94,33 @@ body{
     0 4px 14px rgba(0,0,0,.12);
 }
 
-/* COMING SOON */
+/* LOADING DOTS */
 .coming{
-  margin-top:60px;
+  margin-top:70px;
 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  line-height:1;
+}
+
+.dots{
+  display:flex;
+  align-items:center;
+  gap:2px;
+}
+
+.dots span{
   font-family:"Tahoma", Arial, sans-serif;
-  font-size:clamp(20px, 3vw, 34px);
 
-  font-weight:600;
+  font-size:clamp(42px, 7vw, 80px);
+  font-weight:900;
 
   color:#ffffff;
 
-  opacity:1;
+  line-height:1;
 
-  letter-spacing:0px;
-  line-height:1.1;
-
-  text-shadow:
-    0 4px 14px rgba(0,0,0,.15);
-
-  -webkit-font-smoothing:antialiased;
-}
-
-/* BLINKING DOTS */
-.dots span{
   animation:blink 1.4s infinite;
 }
 
@@ -191,17 +194,11 @@ footer{
   }
 
   .coming{
-    margin-top:52px;
+    margin-top:60px;
+  }
 
-    font-size:22px;
-
-    font-weight:600;
-
-    letter-spacing:0px;
-
-    line-height:1.15;
-
-    color:#ffffff;
+  .dots span{
+    font-size:52px;
   }
 
   footer{
@@ -224,8 +221,8 @@ footer{
     font-size:20px;
   }
 
-  .coming{
-    font-size:18px;
+  .dots span{
+    font-size:44px;
   }
 
   footer{
@@ -245,9 +242,8 @@ footer{
   </div>
 
   <div class="coming">
-    Coming Soon
     <span class="dots">
-      <span>.</span><span>.</span><span>.</span>
+      <span>&#8202;.</span><span>.</span><span>.</span>
     </span>
   </div>
 
