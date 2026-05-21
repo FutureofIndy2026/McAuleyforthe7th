@@ -15,48 +15,36 @@
   box-sizing:border-box;
 }
 
-html,
-body{
+html, body{
   margin:0;
   width:100%;
   min-height:100%;
   overflow:hidden;
-
-  font-family:"Tahoma", Arial, sans-serif;
-
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility;
+  font-family:Tahoma, Arial, sans-serif;
 }
 
 body{
   background:var(--red);
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   color:var(--white);
 }
 
 /* MAIN SCREEN */
 .screen{
   width:100%;
-  min-height:100svh;
-
+  min-height:100vh;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-
   text-align:center;
-
   position:relative;
-
   padding:
     max(20px, env(safe-area-inset-top))
     20px
-    160px
+    max(90px, env(safe-area-inset-bottom))
     20px;
 }
 
@@ -67,60 +55,37 @@ body{
 }
 
 .logo-main{
-  margin:0;
-
-  font-family:"Tahoma", Arial, sans-serif;
+  font-family:Tahoma, Arial, sans-serif;
   font-size:clamp(56px, 12vw, 150px);
   font-weight:900;
   letter-spacing:-3px;
-
+  margin:0;
   color:#ffffff;
-
-  text-shadow:
-    0 6px 18px rgba(0,0,0,.18);
+  text-shadow:0 6px 18px rgba(0,0,0,.18);
 }
 
 .logo-sub{
+  font-family:Tahoma, Arial, sans-serif;
   margin-top:18px;
-
-  font-family:"Tahoma", Arial, sans-serif;
   font-size:clamp(24px, 4vw, 58px);
   font-weight:800;
   letter-spacing:1px;
-
   color:#ffffff;
-
-  text-shadow:
-    0 4px 14px rgba(0,0,0,.12);
 }
 
-/* LOADING DOTS */
+/* COMING SOON */
 .coming{
-  margin-top:70px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  line-height:1;
-}
-
-.dots{
-  display:flex;
-  align-items:center;
-  gap:2px;
+  font-family:Tahoma, Arial, sans-serif;
+  margin-top:48px;
+  font-size:clamp(20px, 3vw, 34px);
+  font-weight:700;
+  color:#ffffff;
+  opacity:1;
+  letter-spacing:.5px;
+  text-shadow:0 4px 14px rgba(0,0,0,.15);
 }
 
 .dots span{
-  font-family:"Tahoma", Arial, sans-serif;
-
-  font-size:clamp(42px, 7vw, 80px);
-  font-weight:900;
-
-  color:#ffffff;
-
-  line-height:1;
-
   animation:blink 1.4s infinite;
 }
 
@@ -148,39 +113,26 @@ body{
 
 /* FOOTER */
 footer{
-  position:fixed;
-
+  font-family:Tahoma, Arial, sans-serif;
+  position:absolute;
+  bottom:max(22px, env(safe-area-inset-bottom));
   left:50%;
-  bottom:calc(18px + env(safe-area-inset-bottom));
-
   transform:translateX(-50%);
-
-  font-family:"Tahoma", Arial, sans-serif;
-  font-size:12px;
-  font-weight:700;
-
-  color:#ffffff;
-
   border:1.5px solid rgba(255,255,255,.78);
-
-  padding:8px 12px;
-
-  background:var(--red);
-
+  padding:9px 16px;
+  font-size:14px;
+  font-weight:700;
   white-space:nowrap;
-
-  z-index:9999;
-
-  max-width:94vw;
+  color:#ffffff;
+  background:transparent;
 }
 
 /* MOBILE OPTIMIZATION */
 @media(max-width:600px){
 
   .screen{
-    min-height:100dvh;
     justify-content:center;
-    padding-bottom:170px;
+    padding-bottom:110px;
   }
 
   .logo-main{
@@ -194,39 +146,16 @@ footer{
   }
 
   .coming{
-    margin-top:60px;
-  }
-
-  .dots span{
-    font-size:52px;
+    margin-top:36px;
+    font-size:22px;
   }
 
   footer{
-    font-size:10px;
-
-    padding:7px 10px;
-
-    bottom:calc(14px + env(safe-area-inset-bottom));
-  }
-}
-
-/* EXTRA SMALL PHONES */
-@media(max-width:380px){
-
-  .logo-main{
-    font-size:48px;
-  }
-
-  .logo-sub{
-    font-size:20px;
-  }
-
-  .dots span{
-    font-size:44px;
-  }
-
-  footer{
-    font-size:9px;
+    width:auto;
+    max-width:90%;
+    font-size:12px;
+    padding:8px 12px;
+    bottom:24px;
   }
 }
 </style>
@@ -242,8 +171,9 @@ footer{
   </div>
 
   <div class="coming">
+    Coming Soon
     <span class="dots">
-      <span>&#8202;.</span><span>.</span><span>.</span>
+      <span>.</span><span>.</span><span>.</span>
     </span>
   </div>
 
