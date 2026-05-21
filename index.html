@@ -2,11 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, viewport-fit=cover"
-/>
-
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <title>McAuley for Congress</title>
 
 <style>
@@ -17,100 +13,74 @@
 
 *{
   box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
 }
 
-html{
-  height:100%;
+html, body{
+  margin:0;
+  width:100%;
+  min-height:100%;
+  overflow:hidden;
+  font-family:Tahoma, Arial, sans-serif;
 }
 
 body{
-  margin:0;
-  min-height:100svh;
-  width:100%;
-  overflow:hidden;
   background:var(--red);
-  color:var(--white);
-  font-family:Tahoma, Arial, sans-serif;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+  color:var(--white);
 }
 
-/* MAIN CONTAINER */
+/* MAIN SCREEN */
 .screen{
   width:100%;
-  min-height:100svh;
-
+  min-height:100vh;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-
   text-align:center;
   position:relative;
-
   padding:
     max(20px, env(safe-area-inset-top))
     20px
-    max(115px, env(safe-area-inset-bottom))
+    max(90px, env(safe-area-inset-bottom))
     20px;
 }
 
 /* LOGO */
 .logo{
   text-transform:uppercase;
-  line-height:.88;
+  line-height:.95;
 }
 
 .logo-main{
-  margin:0;
-
   font-family:Tahoma, Arial, sans-serif;
-  font-size:clamp(72px, 16vw, 175px);
+  font-size:clamp(56px, 12vw, 150px);
   font-weight:900;
-  letter-spacing:-4px;
-
-  color:#ffffff;
-
-  text-shadow:
-    0 4px 12px rgba(0,0,0,.10);
+  letter-spacing:-3px;
+  margin:0;
+  text-shadow:0 6px 18px rgba(0,0,0,.18);
 }
 
 .logo-sub{
-  margin-top:18px;
-
   font-family:Tahoma, Arial, sans-serif;
-  font-size:clamp(30px, 5vw, 62px);
-  font-weight:900;
-  letter-spacing:-1px;
-
-  color:#ffffff;
-
-  text-shadow:
-    0 3px 10px rgba(0,0,0,.10);
+  margin-top:18px;
+  font-size:clamp(24px, 4vw, 58px);
+  font-weight:800;
+  letter-spacing:1px;
 }
 
 /* COMING SOON */
 .coming{
-  margin-top:80px;
-
   font-family:Tahoma, Arial, sans-serif;
-  font-size:clamp(20px, 4vw, 34px);
+  margin-top:48px;
+  font-size:clamp(20px, 3vw, 34px);
   font-weight:700;
+  opacity:.95;
   letter-spacing:.5px;
-
-  color:#ffffff;
-
-  text-shadow:
-    0 4px 14px rgba(0,0,0,.15);
 }
 
-/* BLINKING DOTS */
 .dots span{
   animation:blink 1.4s infinite;
 }
@@ -139,76 +109,49 @@ body{
 
 /* FOOTER */
 footer{
-  position:absolute;
-
-  left:50%;
-  bottom:calc(22px + env(safe-area-inset-bottom));
-
-  transform:translateX(-50%);
-
   font-family:Tahoma, Arial, sans-serif;
-  font-size:13px;
+  position:absolute;
+  bottom:max(22px, env(safe-area-inset-bottom));
+  left:50%;
+  transform:translateX(-50%);
+  border:1.5px solid rgba(255,255,255,.78);
+  padding:9px 16px;
+  font-size:14px;
   font-weight:700;
-
-  color:#ffffff;
-
-  border:1.5px solid rgba(255,255,255,.92);
-
-  padding:9px 14px;
-
-  background:transparent;
-
   white-space:nowrap;
-
-  max-width:92%;
+  color:white;
+  background:transparent;
 }
 
-/* MOBILE */
+/* MOBILE OPTIMIZATION */
 @media(max-width:600px){
 
   .screen{
-    padding-bottom:130px;
+    justify-content:center;
+    padding-bottom:110px;
   }
 
   .logo-main{
-    font-size:clamp(68px, 20vw, 105px);
-    letter-spacing:-2px;
+    font-size:clamp(54px, 16vw, 92px);
+    letter-spacing:-1px;
   }
 
   .logo-sub{
+    font-size:clamp(22px, 7vw, 36px);
     margin-top:12px;
-    font-size:clamp(28px, 8vw, 42px);
   }
 
   .coming{
-    margin-top:58px;
+    margin-top:36px;
     font-size:22px;
   }
 
   footer{
-    font-size:11px;
+    width:auto;
+    max-width:90%;
+    font-size:12px;
     padding:8px 12px;
-    bottom:calc(20px + env(safe-area-inset-bottom));
-  }
-}
-
-/* EXTRA SMALL DEVICES */
-@media(max-width:380px){
-
-  .logo-main{
-    font-size:58px;
-  }
-
-  .logo-sub{
-    font-size:24px;
-  }
-
-  .coming{
-    font-size:18px;
-  }
-
-  footer{
-    font-size:10px;
+    bottom:24px;
   }
 }
 </style>
