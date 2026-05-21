@@ -2,182 +2,247 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>McAuley for Congress</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>McAuley for the 7th</title>
 
 <style>
 :root{
-  --red:#e10600;
-  --white:#ffffff;
+  --navy:#0b1f3a;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:#e2e8f0;
+  --shadow:0 10px 30px rgba(2,6,23,.08);
+  --radius:18px;
+  --max:1100px;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html, body{
-  margin:0;
   width:100%;
-  min-height:100%;
-  overflow:hidden;
-  font-family:Tahoma, Arial, sans-serif;
+  overflow-x:hidden;
 }
 
 body{
-  background:var(--red);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--white);
-}
-
-/* MAIN SCREEN */
-.screen{
-  width:100%;
-  min-height:100svh;
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  position:relative;
-
-  padding:
-    max(20px, env(safe-area-inset-top))
-    20px
-    130px
-    20px;
-}
-
-/* LOGO */
-.logo{
-  text-transform:uppercase;
-  line-height:.95;
-}
-
-.logo-main{
-  font-family:Tahoma, Arial, sans-serif;
-  font-size:clamp(56px, 12vw, 150px);
-  font-weight:900;
-  letter-spacing:-3px;
   margin:0;
-  color:#ffffff;
-  text-shadow:0 6px 18px rgba(0,0,0,.18);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  color:var(--text);
+  background:#ffffff;
+  line-height:1.6;
 }
 
-.logo-sub{
-  font-family:Tahoma, Arial, sans-serif;
-  margin-top:18px;
-  font-size:clamp(24px, 4vw, 58px);
-  font-weight:800;
-  letter-spacing:1px;
-  color:#ffffff;
+/* MOBILE POLISH */
+img{
+  display:block;
+  max-width:100%;
+  height:auto;
 }
 
-/* COMING SOON */
-.coming{
-  font-family:Tahoma, Arial, sans-serif;
-  margin-top:48px;
-  font-size:clamp(20px, 3vw, 34px);
-  font-weight:700;
-  color:#ffffff;
-  opacity:1;
-  letter-spacing:.5px;
-  text-shadow:0 4px 14px rgba(0,0,0,.15);
+h1,
+p{
+  text-wrap:balance;
 }
 
-/* BLINKING DOTS */
-.dots span{
-  animation:blink 1.4s infinite;
-}
-
-.dots span:nth-child(2){
-  animation-delay:.2s;
-}
-
-.dots span:nth-child(3){
-  animation-delay:.4s;
-}
-
-@keyframes blink{
-  0%{
-    opacity:.15;
-  }
-
-  20%{
-    opacity:1;
-  }
-
-  100%{
-    opacity:.15;
-  }
-}
-
-/* FOOTER */
-footer{
-  font-family:Tahoma, Arial, sans-serif;
-
+/* Subtle American flag background */
+.flag-bg{
   position:fixed;
-
-  bottom:calc(14px + env(safe-area-inset-bottom));
-  left:50%;
-
-  transform:translateX(-50%);
-
-  border:1.5px solid rgba(255,255,255,.78);
-
-  padding:8px 12px;
-
-  font-size:12px;
-  font-weight:700;
-
-  white-space:nowrap;
-
-  color:#ffffff;
-
-  background:var(--red);
-
-  z-index:9999;
-
-  max-width:92vw;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)),
+    url('american-flag-bg.png');
+  background-size:cover;
+  background-position:center;
+  z-index:-1;
 }
 
-/* MOBILE OPTIMIZATION */
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:60px 20px 80px;
+  text-align:center;
+  padding-left:max(20px, env(safe-area-inset-left));
+  padding-right:max(20px, env(safe-area-inset-right));
+}
+
+h1{
+  color:var(--navy);
+  font-size:42px;
+  margin:0 0 12px;
+  font-weight:800;
+  letter-spacing:-.4px;
+}
+
+h1 + h1{
+  margin-top:0;
+  margin-bottom:12px;
+}
+
+.event{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px 22px;
+  margin:0 auto 35px;
+  max-width:750px;
+  box-shadow:var(--shadow);
+  font-weight:600;
+  width:100%;
+}
+
+.event div{
+  margin:4px 0;
+}
+
+p{
+  max-width:900px;
+  margin:0 auto 18px;
+  color:var(--muted);
+  font-size:19px;
+}
+
+/* highlight underline */
+.highlight{
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:3px;
+}
+
+/* HEADSHOT */
+.headshot{
+  margin:30px auto 10px;
+}
+
+.headshot img{
+  width:260px;
+  max-width:85vw;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  border:4px solid #fff;
+}
+
+/* Mailchimp responsive */
+#mc_embed_shell,
+#mc_embed_signup,
+#mc_embed_signup form,
+#mc_embed_signup_scroll{
+  width:100% !important;
+  max-width:100% !important;
+}
+
+#mc_embed_signup{
+  background:transparent !important;
+  font:inherit !important;
+}
+
+#mc_embed_signup .mc-field-group label{
+  font-weight:700 !important;
+  color:var(--text) !important;
+}
+
+#mc_embed_signup input,
+#mc_embed_signup select{
+  width:100% !important;
+  max-width:100% !important;
+  border-radius:12px !important;
+  border:1px solid var(--border) !important;
+  padding:12px !important;
+  font-size:16px !important;
+}
+
+#mc_embed_signup .mc-field-group{
+  margin-bottom:14px !important;
+}
+
+#mc_embed_signup .button,
+#mc-embedded-subscribe{
+  background:var(--navy) !important;
+  border-radius:999px !important;
+  font-weight:800 !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  height:52px !important;
+  font-size:18px !important;
+}
+
+/* Center button row */
+#mc_embed_signup .clear.foot{
+  display:flex !important;
+  justify-content:center !important;
+}
+
+/* Hide Mailchimp branding */
+#mc_embed_signup .refferal_badge,
+#mc_embed_signup .brandingLogo,
+#mc_embed_signup p a[title*="Mailchimp"]{
+  display:none !important;
+}
+
+/* Survey button */
+.survey-btn{
+  display:block;
+  width:max-content;
+  background:#e11d2e;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:18px;
+  text-decoration:none;
+  margin:40px auto;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  transition:.2s ease;
+}
+
+.survey-btn:hover{
+  background:#be1b2b;
+}
+
+footer{
+  margin-top:40px;
+  padding-top:25px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.paidfor{
+  font-weight:800;
+  color:var(--navy);
+}
+
+/* Mobile titles */
+.district-title,
+.sub-title{
+  white-space:nowrap;
+}
+
 @media(max-width:600px){
 
-  .screen{
-    justify-content:center;
-    padding-bottom:130px;
-  }
-
-  .logo-main{
-    font-size:clamp(54px, 16vw, 92px);
-    letter-spacing:-1px;
-  }
-
-  .logo-sub{
-    font-size:clamp(22px, 7vw, 36px);
-    margin-top:12px;
-  }
-
-  .coming{
-    margin-top:36px;
+  .district-title,
+  .sub-title{
     font-size:22px;
   }
 
-  footer{
-    width:auto;
+  h1{
+    font-size:30px;
+    line-height:1.08;
+  }
 
-    max-width:92vw;
+  p{
+    font-size:16px;
+  }
 
-    font-size:10px;
+  .headshot img{
+    width:220px;
+  }
+}
 
-    padding:7px 10px;
+@media(max-width:390px){
 
-    bottom:calc(12px + env(safe-area-inset-bottom));
+  .district-title,
+  .sub-title{
+    font-size:20px;
   }
 }
 </style>
@@ -185,22 +250,54 @@ footer{
 
 <body>
 
-<div class="screen">
+<div class="flag-bg"></div>
 
-  <div class="logo">
-    <div class="logo-main">McAuley</div>
-    <div class="logo-sub">FOR CONGRESS</div>
+<div class="wrap">
+
+  <!-- Community Survey Button -->
+  <a class="survey-btn"
+     href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
+     target="_blank">
+    Please Take Our Survey
+  </a>
+
+  <h1 class="district-title">Patrick McAuley</h1>
+  <h1 class="sub-title">Republican Candidate</h1>
+  <h1 class="sub-title">U.S. House of Representatives</h1>
+  <h1 class="sub-title">Indiana's 7th Congressional District</h1>
+
+  <div class="headshot">
+    <img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
   </div>
 
-  <div class="coming">
-    Coming Soon
-    <span class="dots">
-      <span>.</span><span>.</span><span>.</span>
+  <p>
+    Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana's 7th District.
+  </p>
+
+  <p>
+    Since 2015, Patrick has been engaged at every level of government — from grassroots leadership here in Indiana to experience on Capitol Hill under the leadership of a current U.S. senator. He has seen firsthand how policy decisions affect families and their loved ones.
+  </p>
+
+  <p>
+    In January 2025, Patrick's team launched a district-wide survey that has received over 400 responses from voters across the 7th District. The message is clear. Families care about affordability, public safety, housing stability, career pathways, and the long-term future of our communities.
+  </p>
+
+  <p>
+    <span class="highlight">
+      If we are going to bring change, we need to have the financial resources necessary to provide for public safety, housing, and creating great jobs for the next generation.
     </span>
-  </div>
+  </p>
+
+  <p>
+    <span class="highlight">
+      Using the relationships he has built over the course of fifteen years, Patrick and his team will work with state, local, and federal leadership to bring financial resources into our communities.
+    </span>
+  </p>
+
+  <p>The time is now.</p>
 
   <footer>
-    Paid for by McAuley for Congress
+    <div class="paidfor">Paid for by McAuley for Congress</div>
   </footer>
 
 </div>
