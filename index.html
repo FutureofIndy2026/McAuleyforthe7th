@@ -185,6 +185,35 @@ p{
   display:none !important;
 }
 
+/* Top Action Buttons */
+.top-actions{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  margin:40px auto;
+}
+
+/* Our Plan button */
+.plan-btn{
+  display:block;
+  width:max-content;
+  background:var(--navy);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:18px;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  transition:.2s ease;
+}
+
+.plan-btn:hover{
+  opacity:.9;
+}
+
 /* Survey button */
 .survey-btn{
   display:block;
@@ -196,7 +225,7 @@ p{
   font-weight:800;
   font-size:18px;
   text-decoration:none;
-  margin:40px auto;
+  margin:0 auto;
   box-shadow:0 8px 20px rgba(0,0,0,.12);
   transition:.2s ease;
 }
@@ -258,26 +287,31 @@ footer{
 
 <div class="flag-bg"></div>
 
- <a class="plan-btn" href="our-plan.html">
-    Our Plan
-  </a>
+<div class="wrap">
 
-  <a class="survey-btn"
-     href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
-     target="_blank">
-    Please Take Our Survey
-  </a>
+  <!-- Top Action Buttons -->
+  <div class="top-actions">
 
-</div>
+    <a class="plan-btn" href="our-plan.html">
+      Our Plan
+    </a>
 
-<h1 class="district-title">Patrick McAuley</h1>
-<h1 class="sub-title">Republican Candidate</h1>
-<h1 class="sub-title">U.S. House of Representatives</h1>
-<h1 class="sub-title">Indiana's 7th Congressional District</h1>
+    <a class="survey-btn"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSctrZ8s0UNSG-oKs2hTUwY_6II1qmAS9ixIAETlT6TSNjmdBg/viewform"
+       target="_blank">
+      Please Take Our Survey
+    </a>
 
-<div class="headshot">
-  <img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
-</div>
+  </div>
+
+  <h1 class="district-title">Patrick McAuley</h1>
+  <h1 class="sub-title">Republican Candidate</h1>
+  <h1 class="sub-title">U.S. House of Representatives</h1>
+  <h1 class="sub-title">Indiana's 7th Congressional District</h1>
+
+  <div class="headshot">
+    <img src="patrick-headshot.png" alt="Patrick McAuley Headshot">
+  </div>
 
   <p>
     Patrick McAuley is a candidate for the U.S. House of Representatives in Indiana's 7th District.
