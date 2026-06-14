@@ -30,6 +30,7 @@ background:#ffffff;
 line-height:1.6;
 }
 
+/* Subtle American flag background */
 .flag-bg{
 position:fixed;
 inset:0;
@@ -44,7 +45,7 @@ z-index:-1;
 .wrap{
 max-width:var(--max);
 margin:0 auto;
-padding:60px 20px 80px;
+padding:clamp(36px, 7vw, 60px) 20px 80px;
 text-align:center;
 padding-left:max(20px, env(safe-area-inset-left));
 padding-right:max(20px, env(safe-area-inset-right));
@@ -65,13 +66,16 @@ margin-bottom:35px;
 
 h1{
 color:var(--navy);
-font-size:42px;
-margin:0 0 12px;
+font-size:clamp(26px, 5.2vw, 42px);
+line-height:1.08;
+margin:0 0 18px;
 font-weight:800;
 letter-spacing:-.4px;
+text-wrap:balance;
 }
 
 .plan-card{
+width:100%;
 max-width:900px;
 margin:0 auto;
 padding:0;
@@ -86,8 +90,10 @@ text-align:center;
 max-width:900px;
 margin:0 auto 18px;
 color:var(--muted);
-font-size:19px;
+font-size:clamp(16px, 2.6vw, 19px);
+line-height:1.55;
 font-weight:400;
+text-wrap:pretty;
 }
 
 .plan-card p:last-child{
@@ -108,16 +114,39 @@ color:var(--navy);
 
 @media(max-width:600px){
 .wrap{
-padding-top:40px;
+padding-top:34px;
+padding-left:18px;
+padding-right:18px;
+}
+
+.back-btn{
+font-size:15px;
+padding:11px 22px;
+margin-bottom:28px;
 }
 
 h1{
-font-size:30px;
-line-height:1.08;
+font-size:25px;
+line-height:1.12;
+margin-bottom:18px;
 }
 
 .plan-card p{
+max-width:100%;
 font-size:16px;
+line-height:1.5;
+margin-bottom:15px;
+}
+}
+
+@media(max-width:390px){
+h1{
+font-size:23px;
+}
+
+.plan-card p{
+font-size:15.5px;
+line-height:1.48;
 }
 }
 </style>
@@ -144,7 +173,7 @@ At the same time, youth gun violence has increased by more than 900%.
 </p>
 
 <p>
-Our team will update federal policy to give companies and small business ways to hire more skilled workers. We will update policies and introduce legislation that create stronger pathways to homeownership. And we will work with local, state, and federal partners to end violence.
+Our team will update federal policy to give companies and small businesses more ways to hire more skilled workers. We will update policies and introduce legislation that creates stronger pathways to homeownership. And we will work with local, state, and federal partners to end violence.
 </p>
 
 <p>
